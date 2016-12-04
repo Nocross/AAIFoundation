@@ -14,7 +14,7 @@
     limitations under the License.
  */
 
-#include "Version.h"
+#include "Foundation-Bridging-Header.h"
 
 #define INTERNAL_CONCAT(a,b) a ## b
 #define VERSION_NUMBER(PREFIX) INTERNAL_CONCAT(PREFIX,FoundationVersionNumber)
@@ -26,11 +26,10 @@ extern double VERSION_NUMBER(PRODUCT_NAME_PREFIX);
 ////! Project version string for Foundation.
 extern const unsigned char VERSION_STRING(PRODUCT_NAME_PREFIX)[];
 
-
-double getFoundationVersionNumber() {
+double getFoundationVersionNumber() __attribute__ ((used)) {
     return VERSION_NUMBER(PRODUCT_NAME_PREFIX);
 }
 
-const unsigned char* getFoundationVersionString() {
+const unsigned char* getFoundationVersionString() __attribute__ ((used)) {
     return VERSION_STRING(PRODUCT_NAME_PREFIX);
 }
