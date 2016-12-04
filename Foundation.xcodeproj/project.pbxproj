@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0701671DE0DFB300BB4053 /* OSUnfairLock+Locking.swift */; };
 		0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */; };
-		0C0B60A11D16C458006C12D0 /* SPXFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0B60961D16C458006C12D0 /* SPXFoundation.framework */; };
+		0C0B60A11D16C458006C12D0 /* AAIFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0B60961D16C458006C12D0 /* AAIFoundation.framework */; };
 		0C42D7361DDE38830011130B /* Resultful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42D7351DDE38830011130B /* Resultful.swift */; };
 		0C488E9E1DD74F7F007B3234 /* OSUnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C488E9D1DD74F7F007B3234 /* OSUnfairLock.swift */; };
 		0C4DB1661DC280B000521438 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4DB1651DC280B000521438 /* Locking.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		0C0701671DE0DFB300BB4053 /* OSUnfairLock+Locking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OSUnfairLock+Locking.swift"; sourceTree = "<group>"; };
 		0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Locking.swift"; sourceTree = "<group>"; };
-		0C0B60961D16C458006C12D0 /* SPXFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPXFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0B60961D16C458006C12D0 /* AAIFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AAIFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0B60A01D16C458006C12D0 /* FoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0B60B11D16C548006C12D0 /* FoundationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationTests.swift; sourceTree = "<group>"; };
 		0C0B60B21D16C548006C12D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C0B60A11D16C458006C12D0 /* SPXFoundation.framework in Frameworks */,
+				0C0B60A11D16C458006C12D0 /* AAIFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +183,7 @@
 		0C0B60971D16C458006C12D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C0B60961D16C458006C12D0 /* SPXFoundation.framework */,
+				0C0B60961D16C458006C12D0 /* AAIFoundation.framework */,
 				0C0B60A01D16C458006C12D0 /* FoundationTests.xctest */,
 			);
 			name = Products;
@@ -755,7 +755,7 @@
 			);
 			name = Foundation;
 			productName = Foundation;
-			productReference = 0C0B60961D16C458006C12D0 /* SPXFoundation.framework */;
+			productReference = 0C0B60961D16C458006C12D0 /* AAIFoundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0C0B609F1D16C458006C12D0 /* FoundationTests */ = {
