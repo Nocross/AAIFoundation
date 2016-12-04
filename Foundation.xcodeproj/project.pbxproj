@@ -26,6 +26,9 @@
 		0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */; };
 		0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */; };
 		E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */; };
+		E13895152BD0F2E2FBCFB889 /* CollectionObservationResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1389B3E9B5150E4AFE3087D /* CollectionObservationResultsController.swift */; };
+		E13899F2CAF42112CCD7F24A /* OrderedCollectionObservationResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13896ABC92485B0B8F19977 /* OrderedCollectionObservationResultsController.swift */; };
+		E1389A3CC95A034941F3B140 /* PropertyListDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13893D91FCCBC7068BEA80A /* PropertyListDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousExecution.swift; sourceTree = "<group>"; };
 		0CC7222E1DF3601E00381040 /* Foundation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Foundation-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
+		E13893D91FCCBC7068BEA80A /* PropertyListDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListDatasource.swift; sourceTree = "<group>"; };
+		E13896ABC92485B0B8F19977 /* OrderedCollectionObservationResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedCollectionObservationResultsController.swift; sourceTree = "<group>"; };
+		E1389B3E9B5150E4AFE3087D /* CollectionObservationResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionObservationResultsController.swift; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +275,9 @@
 		0CA46DFA1D16C7DF00F584F6 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				E1389B3E9B5150E4AFE3087D /* CollectionObservationResultsController.swift */,
+				E13896ABC92485B0B8F19977 /* OrderedCollectionObservationResultsController.swift */,
+				E13893D91FCCBC7068BEA80A /* PropertyListDatasource.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -859,6 +868,9 @@
 				0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */,
 				0C6012F81DDB9482008F35FD /* PropertyListSerialization+Extensions.swift in Sources */,
 				E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */,
+				E13895152BD0F2E2FBCFB889 /* CollectionObservationResultsController.swift in Sources */,
+				E13899F2CAF42112CCD7F24A /* OrderedCollectionObservationResultsController.swift in Sources */,
+				E1389A3CC95A034941F3B140 /* PropertyListDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
