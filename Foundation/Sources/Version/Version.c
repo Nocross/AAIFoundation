@@ -14,13 +14,23 @@
     limitations under the License.
  */
 
-#ifndef Foundation_Bridging_Header_h_h
-#define Foundation_Bridging_Header_h_h
+#include "Version.h"
+
+#define INTERNAL_CONCAT(a,b) a ## b
+#define VERSION_NUMBER(PREFIX) INTERNAL_CONCAT(PREFIX,FoundationVersionNumber)
+#define VERSION_STRING(PREFIX) INTERNAL_CONCAT(PREFIX, FoundationVersionString)
 
 ////! Project version number for Foundation.
-extern double getFoundationVersionNumber(void);
+extern double VERSION_NUMBER(PRODUCT_NAME_PREFIX);
 
 ////! Project version string for Foundation.
-extern const unsigned char* getFoundationVersionString(void);
+extern const unsigned char VERSION_STRING(PRODUCT_NAME_PREFIX)[];
 
-#endif /* Foundation_Bridging_Header_h_h */
+
+double getFoundationVersionNumber() {
+    return VERSION_NUMBER(PRODUCT_NAME_PREFIX);
+}
+
+const unsigned char* getFoundationVersionString() {
+    return VERSION_STRING(PRODUCT_NAME_PREFIX);
+}

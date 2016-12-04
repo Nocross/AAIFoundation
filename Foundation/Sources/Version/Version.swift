@@ -14,13 +14,15 @@
     limitations under the License.
  */
 
-#ifndef Foundation_Bridging_Header_h_h
-#define Foundation_Bridging_Header_h_h
 
-////! Project version number for Foundation.
-extern double getFoundationVersionNumber(void);
+public final class Version {
+    private init() {}
 
-////! Project version string for Foundation.
-extern const unsigned char* getFoundationVersionString(void);
+    public static var number: Double {
+        return getFoundationVersionNumber()
+    }
 
-#endif /* Foundation_Bridging_Header_h_h */
+    public static var string: String {
+        return String(cString: getFoundationVersionString())
+    }
+}
