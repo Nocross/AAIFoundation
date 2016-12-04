@@ -26,10 +26,14 @@ extern double VERSION_NUMBER(PRODUCT_NAME_PREFIX);
 ////! Project version string for Foundation.
 extern const unsigned char VERSION_STRING(PRODUCT_NAME_PREFIX)[];
 
-double getFoundationVersionNumber() __attribute__ ((used)) {
+
+extern double getFoundationVersionNumber() __attribute__ ((used)) ;
+extern const unsigned char* getFoundationVersionString() __attribute__ ((used)) ;
+
+double getFoundationVersionNumber() {
     return VERSION_NUMBER(PRODUCT_NAME_PREFIX);
 }
 
-const unsigned char* getFoundationVersionString() __attribute__ ((used)) {
+const unsigned char *getFoundationVersionString() {
     return VERSION_STRING(PRODUCT_NAME_PREFIX);
 }

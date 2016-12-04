@@ -18,9 +18,9 @@
 #define Foundation_Bridging_Header_h_h
 
 ////! Project version number for Foundation.
-extern double getFoundationVersionNumber(void);
+extern double getFoundationVersionNumber(void) __attribute__ ((used)) ;
 
 ////! Project version string for Foundation.
-extern const unsigned char* getFoundationVersionString(void);
+extern const unsigned char* getFoundationVersionString(void) __attribute__ ((used)) ;
 
 #endif /* Foundation_Bridging_Header_h_h */
