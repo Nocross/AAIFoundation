@@ -28,9 +28,19 @@ public protocol Execution {
 
     func prepare(for op: Operation) -> Void
 
-    func start() -> Void
+    func start() -> Bool
 
     func cancel(withCompletion handler: (() throws -> Void)?) rethrows -> Void
 
     func finalize(withCompletion: (() throws -> Void)?) rethrows -> Void
+}
+
+extension Execution {
+    public func cancel() {
+        cancel(withCompletion: nil)
+    }
+
+    public func finalize() {
+        finalize(withCompletion: nil)
+    }
 }
