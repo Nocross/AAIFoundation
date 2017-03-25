@@ -17,18 +17,19 @@
 
 import ObjectiveC
 
-public func class_derivedClassSwizzleImp(_ cls: AnyClass, selector: Selector, imp: IMP) -> Bool {
-    var result = true
+public func class_derivedClassSwizzleImp(_ cls: AnyClass, selector: Selector, imp: IMP) -> (success: Bool, previous: IMP?) {
+    var success = true
+    var previous: IMP? = nil
 
     if let method = class_getDerivedClassMethod(cls, selector: selector) {
-        class_replaceMethod(cls, selector, imp, method_getTypeEncoding(method))
+        previous = class_replaceMethod(cls, selector, imp, method_getTypeEncoding(method))
     } else if let method = class_getClassMethod(class_getSuperclass(cls), selector) {
-        result = class_addMethod(cls, selector, imp, method_getTypeEncoding(method))
+        success = class_addMethod(cls, selector, imp, method_getTypeEncoding(method))
     } else {
-        result = false
+        success = false
     }
 
-    return result
+    return (success, previous)
 }
 
 public func class_getDerivedClassMethod(_ cls: AnyClass, selector: Selector) -> Method? {
@@ -38,12 +39,16 @@ public func class_getDerivedClassMethod(_ cls: AnyClass, selector: Selector) -> 
     }
 
     var j: UInt32 = 0;
-    let method = { methods.advanced(by: Int(j)).pointee };
-    while(selector != method_getName(method()) && j < count) {
-        j += 1;
-    }
+    var method: Method!
+    var name: Selector!
+    repeat {
+        method = methods.advanced(by: numericCast(j)).pointee
+        name = method_getName(method)
 
-    let result: Method? = j < count ? method() : nil
+        j += 1;
+    } while (!sel_isEqual(selector, name) && j < count)
+
+    let result: Method? = j < count ? method : nil
     free(methods)
 
     return result
@@ -60,11 +65,11 @@ public func class_getDerivedClassImp(_ cls: AnyClass, selector: Selector) -> IMP
 }
 
 
-public func object_dynamicCast<T: AnyObject, U: AnyObject>(obj: T, `class`: AnyClass) -> U? {
+public func object_dynamicCast<T: AnyObject, U: AnyObject>(obj: T, `class`: U.Type) -> U? {
     var result: U? = nil
     if let objClass = object_getClass(obj) {
-        if objClass == `class` {
-            result = obj as? U
+        if objClass === `class` {
+            result = unsafeDowncast(obj, to: `class`)
         }
     }
 
