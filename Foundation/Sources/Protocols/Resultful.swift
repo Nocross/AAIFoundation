@@ -14,14 +14,17 @@
     limitations under the License.
  */
 
-public enum Result<T> {
-    case none
-    case some(T)
-    case error(Error)
+public enum Outcome<T>: ExpressibleByNilLiteral {
+    case error(Error?)
+    case conclusion(T)
+
+    public init(nilLiteral: ()) {
+        self = .error(nil)
+    }
 }
 
 public protocol Resultful {
-    associatedtype T
+    associatedtype Resultant
 
-    var result: Result<T> { get }
+    var result: Outcome<Resultant> { get }
 }
