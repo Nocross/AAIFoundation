@@ -17,22 +17,61 @@
 
 import ObjectiveC.runtime
 
-public final class ObjectAssociationKey<T> {
-    init() {}
+public struct ObjectiveC {
+    private init() {}
+
+    public struct Runtime {
+        private init() {}
+    }
 }
 
-public func withAssociatedObject<T: NSObjectProtocol, Result>(_ object: Any, key: inout ObjectAssociationKey<T> , _ body: (_ object: T?) throws -> Result) rethrows -> Result {
-    let associated = withUnsafePointer(to: &key) { return objc_getAssociatedObject(object, $0) as? T }
+extension ObjectiveC.Runtime {
+    public final class ObjectAssociationKey {
+        init() {}
+    }
 
-    return try body(associated)
+    public static func associate<T: AnyObject>(object: T?, to otherObject: AnyObject, for key: ObjectAssociationKey, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+        let keyPtr = Unmanaged.passUnretained(key).toOpaque()
+        objc_setAssociatedObject(otherObject, keyPtr, object ?? nil, policy)
+    }
+
+    public static func getAssociated<T: AnyObject>(to object: AnyObject, for key: ObjectAssociationKey) -> T? {
+        let keyPtr = Unmanaged.passUnretained(key).toOpaque()
+        return objc_getAssociatedObject(object, keyPtr) as? T
+    }
+
+    public static func removeAssociatedObjects(from object: Any) {
+        objc_removeAssociatedObjects(object)
+    }
+
+    public static func withAssociated<T: AnyObject, Result>(to object: AnyObject, for key: ObjectAssociationKey, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC, _ body: (_ object: inout T?) throws -> Result) rethrows -> Result {
+        let keyPtr = Unmanaged.passUnretained(key).toOpaque()
+        var associated = objc_getAssociatedObject(object, keyPtr) as? T
+
+        let result = try body(&associated)
+
+        objc_setAssociatedObject(object, keyPtr, associated ?? nil, policy)
+
+        return result
+    }
 }
 
 extension NSObjectProtocol {
-    public func associate<T: NSObjectProtocol>(object: T?, for key: inout ObjectAssociationKey<T>, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
-        withUnsafePointer(to: &key) { objc_setAssociatedObject(self, $0, object, policy) }
+    public typealias ObjectAssociationKey = ObjectiveC.Runtime.ObjectAssociationKey
+
+    public func associate<T: AnyObject>(object: T?, for key: ObjectAssociationKey, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+        ObjectiveC.Runtime.associate(object: object, to: self, for: key, policy: policy)
     }
 
-    public func getAssociated<T: NSObjectProtocol>(for key: inout ObjectAssociationKey<T>) -> T? {
-        return withUnsafePointer(to: &key) { return objc_getAssociatedObject(self, $0) } as? T
+    public func getAssociated<T: AnyObject>(for key: ObjectAssociationKey) -> T? {
+        return ObjectiveC.Runtime.getAssociated(to: self, for: key)
+    }
+
+    public func removeAssociatedObjects() {
+        ObjectiveC.Runtime.removeAssociatedObjects(from: self)
+    }
+
+    public func withAssociated<T: AnyObject, Result>(to object: AnyObject, for key: ObjectAssociationKey, policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC, _ body: (_ object: inout T?) throws -> Result) rethrows -> Result {
+        return try ObjectiveC.Runtime.withAssociated(to: self, for: key, policy: policy, body)
     }
 }
