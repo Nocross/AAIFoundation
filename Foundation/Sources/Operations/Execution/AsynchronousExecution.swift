@@ -19,7 +19,7 @@ import Foundation
 
 extension Operation {
     public class AsynchronousExecution {
-        fileprivate let lock: Locking = OSUnfairLock()
+        fileprivate let lock: Locking
         fileprivate var executing = false
         fileprivate var finished = false
         fileprivate var cancelled = false
@@ -28,7 +28,13 @@ extension Operation {
         
         //MARK: -
 
-        public init() {}
+        public init(){
+            lock = NSLock()
+        }
+
+        public init(with lock: Locking) {
+            self.lock = lock
+        }
     }
 }
 
@@ -66,19 +72,29 @@ extension Operation.AsynchronousExecution: Execution {
     public func prepare(for op: Operation) {
         lock.lock()
 
-        operation = op
+        if operation == nil {
+            operation = op
+        }
 
         lock.unlock()
     }
 
-    public func start() {
+    public func start() -> Bool {
         let isValid = lock.withCritical { !(executing && finished && cancelled) }
         if isValid {
             isExecuting = true
         }
+
+        return isValid
     }
 
     public func cancel(withCompletion handler: (() throws -> Void)? = nil) rethrows -> Void {
+        guard !isCancelled else {
+            return
+        }
+
+        isCancelled = true
+
         if isFinished {
             try handler?()
         } else {
@@ -88,8 +104,11 @@ extension Operation.AsynchronousExecution: Execution {
 
     public func finalize(withCompletion finalizer: (() throws -> Void)? = nil) rethrows -> Void {
         defer {
-            isExecuting = false
-            if !isCancelled {
+            if isExecuting {
+                isExecuting = false
+            }
+
+            if !isFinished {
                 isFinished = true
             }
         }
