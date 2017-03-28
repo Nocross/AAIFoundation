@@ -15,12 +15,12 @@
 		0C4DB1661DC280B000521438 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4DB1651DC280B000521438 /* Locking.swift */; };
 		0C6012F81DDB9482008F35FD /* PropertyListSerialization+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6012F71DDB9482008F35FD /* PropertyListSerialization+Extensions.swift */; };
 		0C831D041DF425250074EC3E /* Version.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C831D011DF425250074EC3E /* Version.c */; };
-		0C831D061DF425250074EC3E /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C831D031DF425250074EC3E /* Version.swift */; };
 		0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46E0B1D16C7DF00F584F6 /* Error+Extensions.swift */; };
 		0CA46F161D17001A00F584F6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F151D17001A00F584F6 /* String+Extensions.swift */; };
 		0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F171D1702FA00F584F6 /* NSObject+Extensions.swift */; };
 		0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */; };
 		0CA46F201D1711DF00F584F6 /* objc-runtime-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F1F1D1711DF00F584F6 /* objc-runtime-ext.swift */; };
+		0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397D1E8AF5410092CA46 /* Foundation.swift */; };
 		0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA985981DA9950A00F88C5E /* ErrorProne.swift */; };
 		0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC290D31DE0ACF300B97D11 /* Execution.swift */; };
 		0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */; };
@@ -50,7 +50,6 @@
 		0C4DB1651DC280B000521438 /* Locking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locking.swift; sourceTree = "<group>"; };
 		0C6012F71DDB9482008F35FD /* PropertyListSerialization+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyListSerialization+Extensions.swift"; sourceTree = "<group>"; };
 		0C831D011DF425250074EC3E /* Version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Version.c; sourceTree = "<group>"; };
-		0C831D031DF425250074EC3E /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		0CA46E0B1D16C7DF00F584F6 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		0CA46E201D16C7DF00F584F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CA46E211D16C7DF00F584F6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		0CA46F1B1D17073A00F584F6 /* MapTable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapTable+Extensions.swift"; sourceTree = "<group>"; };
 		0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSException+Extensions.swift"; sourceTree = "<group>"; };
 		0CA46F1F1D1711DF00F584F6 /* objc-runtime-ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "objc-runtime-ext.swift"; sourceTree = "<group>"; };
+		0CA9397D1E8AF5410092CA46 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		0CA985981DA9950A00F88C5E /* ErrorProne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorProne.swift; sourceTree = "<group>"; };
 		0CC290D31DE0ACF300B97D11 /* Execution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Execution.swift; sourceTree = "<group>"; };
 		0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousExecution.swift; sourceTree = "<group>"; };
@@ -226,7 +226,6 @@
 		0C831D001DF424FC0074EC3E /* Version */ = {
 			isa = PBXGroup;
 			children = (
-				0C831D031DF425250074EC3E /* Version.swift */,
 				0C831D011DF425250074EC3E /* Version.c */,
 			);
 			path = Version;
@@ -244,6 +243,7 @@
 		0CA46DDE1D16C7DF00F584F6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0CA9397D1E8AF5410092CA46 /* Foundation.swift */,
 				0C831D001DF424FC0074EC3E /* Version */,
 				0C488E9A1DD74F30007B3234 /* Darwin */,
 				0CA985971DA994E200F88C5E /* Protocols */,
@@ -251,7 +251,6 @@
 				0CA46DF91D16C7DF00F584F6 /* Custom */,
 				0CA46F141D16EE4800F584F6 /* Extensions */,
 				0CA46E0C1D16C7DF00F584F6 /* Runtime */,
-				0CA46E131D16C7DF00F584F6 /* Supporting Files */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -294,13 +293,6 @@
 				E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */,
 			);
 			path = Runtime;
-			sourceTree = "<group>";
-		};
-		0CA46E131D16C7DF00F584F6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0CA46E1E1D16C7DF00F584F6 /* Supporting Files */ = {
@@ -846,8 +838,8 @@
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
 				0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */,
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
+				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
 				0C831D041DF425250074EC3E /* Version.c in Sources */,
-				0C831D061DF425250074EC3E /* Version.swift in Sources */,
 				0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */,
 				0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */,
 				0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */,
