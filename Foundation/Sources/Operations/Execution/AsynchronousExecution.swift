@@ -59,7 +59,7 @@ extension Operation.AsynchronousExecution: Execution {
     public private(set) var isFinished: Bool {
         get { return lock.withCritical { finished } }
         set {
-            let key = #keyPath(Operation.isExecuting)
+            let key = #keyPath(Operation.isFinished)
             operation?.withValueChange(for: key) { lock.withCritical { finished = newValue } }
         }
     }
@@ -81,6 +81,8 @@ extension Operation.AsynchronousExecution: Execution {
 
     public func start() -> Bool {
         let isValid = lock.withCritical { !(executing && finished && cancelled) }
+        assert(isValid, "Operation is already cancelled or invalid")
+
         if isValid {
             isExecuting = true
         }
@@ -88,16 +90,16 @@ extension Operation.AsynchronousExecution: Execution {
         return isValid
     }
 
-    public func cancel(withCompletion handler: (() throws -> Void)? = nil) rethrows -> Void {
-        guard !isCancelled else {
+    public func cancel(finalized: Bool = true, withCompletion handler: (() throws -> Void)? = nil) rethrows -> Void {
+        guard isCancelled else {
             return
         }
 
         isCancelled = true
 
-        if isFinished {
+        if isFinished || !finalized {
             try handler?()
-        } else {
+        } else if finalized {
             finalize(withCompletion: handler)
         }
     }

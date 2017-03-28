@@ -30,14 +30,14 @@ public protocol Execution {
 
     func start() -> Bool
 
-    func cancel(withCompletion handler: (() throws -> Void)?) rethrows -> Void
+    func cancel(finalized: Bool, withCompletion handler: (() throws -> Void)?) rethrows -> Void
 
     func finalize(withCompletion: (() throws -> Void)?) rethrows -> Void
 }
 
 extension Execution {
-    public func cancel() {
-        cancel(withCompletion: nil)
+    public func cancel(finalized: Bool = true) {
+        cancel(finalized: finalized, withCompletion: nil)
     }
 
     public func finalize() {
