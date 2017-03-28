@@ -20,6 +20,7 @@
 		0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F171D1702FA00F584F6 /* NSObject+Extensions.swift */; };
 		0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */; };
 		0CA46F201D1711DF00F584F6 /* objc-runtime-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA46F1F1D1711DF00F584F6 /* objc-runtime-ext.swift */; };
+		0CA9397C1E8AF3450092CA46 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397B1E8AF3450092CA46 /* String+Localized.swift */; };
 		0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397D1E8AF5410092CA46 /* Foundation.swift */; };
 		0CA939801E8AF58F0092CA46 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */; };
 		0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA985981DA9950A00F88C5E /* ErrorProne.swift */; };
@@ -135,6 +136,7 @@
 		0CA46F1B1D17073A00F584F6 /* MapTable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapTable+Extensions.swift"; sourceTree = "<group>"; };
 		0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSException+Extensions.swift"; sourceTree = "<group>"; };
 		0CA46F1F1D1711DF00F584F6 /* objc-runtime-ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "objc-runtime-ext.swift"; sourceTree = "<group>"; };
+		0CA9397B1E8AF3450092CA46 /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		0CA9397D1E8AF5410092CA46 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		0CA985981DA9950A00F88C5E /* ErrorProne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorProne.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 				0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */,
 				0C6012F71DDB9482008F35FD /* PropertyListSerialization+Extensions.swift */,
 				0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */,
+				0CA9397B1E8AF3450092CA46 /* String+Localized.swift */,
 				0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
@@ -850,6 +853,7 @@
 				0CA939801E8AF58F0092CA46 /* Bundle+Extensions.swift in Sources */,
 				0C488E9E1DD74F7F007B3234 /* OSUnfairLock.swift in Sources */,
 				0C4DB1661DC280B000521438 /* Locking.swift in Sources */,
+				0CA9397C1E8AF3450092CA46 /* String+Localized.swift in Sources */,
 				0CA46F161D17001A00F584F6 /* String+Extensions.swift in Sources */,
 				0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */,
 				0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */,
