@@ -29,6 +29,7 @@
 		0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */; };
 		0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */; };
 		E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */; };
+		E1389DB1799E52831865A0CB /* UniformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138937F6CFE04C3E1DCD815 /* UniformType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +101,7 @@
 		0CA46EB41D16C86800F584F6 /* iOS-Application-Swift-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
 		0CA46EB51D16C86800F584F6 /* iOS-Application-Swift-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Release.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
 		0CA46EB91D16C86800F584F6 /* iOS-Application-Swift-Embedding-Bridged-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Bridged-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
-		0CA46EBA1D16C86800F584F6 /* iOS-Application-Swift-Embedding-Bridged-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Bridged-Release.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
+		0CA46EBA1D16C86800F584F6 /* iOS-Application-Swift-Embedding-Bridged-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Bridged-Release.xcconfig"; sourceTree = "<group>"; };
 		0CA46EBB1D16C86800F584F6 /* iOS-Application-Swift-Embedding-Bridged.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Bridged.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
 		0CA46EBD1D16C86800F584F6 /* iOS-Application-Swift-Embedding-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
 		0CA46EBE1D16C86800F584F6 /* iOS-Application-Swift-Embedding-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Application-Swift-Embedding-Release.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
@@ -114,7 +115,7 @@
 		0CA46ECA1D16C86800F584F6 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		0CA46ECD1D16C86800F584F6 /* iOS-Framework-Swift-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
 		0CA46ECE1D16C86800F584F6 /* iOS-Framework-Swift-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Release.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
-		0CA46ED21D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
+		0CA46ED21D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig"; sourceTree = "<group>"; };
 		0CA46ED31D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Embedded-Bridged-Release.xcconfig"; sourceTree = "<group>"; };
 		0CA46ED41D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Embedded-Bridged.xcconfig"; sourceTree = "<group>"; };
 		0CA46ED61D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; lineEnding = 0; path = "iOS-Framework-Swift-Embedded-Debug.xcconfig"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
@@ -146,6 +147,7 @@
 		0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousExecution.swift; sourceTree = "<group>"; };
 		0CC7222E1DF3601E00381040 /* Foundation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Foundation-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
+		E138937F6CFE04C3E1DCD815 /* UniformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformType.swift; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +259,7 @@
 				0CA46DF91D16C7DF00F584F6 /* Custom */,
 				0CA46F141D16EE4800F584F6 /* Extensions */,
 				0CA46E0C1D16C7DF00F584F6 /* Runtime */,
+				E1389C0DA2D840D29E3E8A6C /* MobileCoreServices */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -728,6 +731,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		E1389C0DA2D840D29E3E8A6C /* MobileCoreServices */ = {
+			isa = PBXGroup;
+			children = (
+				E138937F6CFE04C3E1DCD815 /* UniformType.swift */,
+			);
+			path = MobileCoreServices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -863,6 +874,7 @@
 				0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */,
 				0C6012F81DDB9482008F35FD /* PropertyListSerialization+Extensions.swift in Sources */,
 				E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */,
+				E1389DB1799E52831865A0CB /* UniformType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
