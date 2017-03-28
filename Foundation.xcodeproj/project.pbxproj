@@ -10,6 +10,7 @@
 		0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0701671DE0DFB300BB4053 /* OSUnfairLock+Locking.swift */; };
 		0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */; };
 		0C0B60A11D16C458006C12D0 /* AAIFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0B60961D16C458006C12D0 /* AAIFoundation.framework */; };
+		0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1484831E8A544E00A7FED7 /* BundleResourceRequestOperation.swift */; };
 		0C42D7361DDE38830011130B /* Resultful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C42D7351DDE38830011130B /* Resultful.swift */; };
 		0C488E9E1DD74F7F007B3234 /* OSUnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C488E9D1DD74F7F007B3234 /* OSUnfairLock.swift */; };
 		0C4DB1661DC280B000521438 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4DB1651DC280B000521438 /* Locking.swift */; };
@@ -47,6 +48,7 @@
 		0C0B60A01D16C458006C12D0 /* FoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0B60B11D16C548006C12D0 /* FoundationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationTests.swift; sourceTree = "<group>"; };
 		0C0B60B21D16C548006C12D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C1484831E8A544E00A7FED7 /* BundleResourceRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleResourceRequestOperation.swift; sourceTree = "<group>"; };
 		0C42D7351DDE38830011130B /* Resultful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resultful.swift; sourceTree = "<group>"; };
 		0C488E9D1DD74F7F007B3234 /* OSUnfairLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSUnfairLock.swift; sourceTree = "<group>"; };
 		0C4DB1651DC280B000521438 /* Locking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locking.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 			isa = PBXGroup;
 			children = (
 				0C07016B1DE0E77600BB4053 /* Execution */,
+				0C1484831E8A544E00A7FED7 /* BundleResourceRequestOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */,
 				0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */,
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
+				0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */,
 				0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */,
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
 				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
