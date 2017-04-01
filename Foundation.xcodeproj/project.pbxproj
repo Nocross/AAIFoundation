@@ -24,8 +24,6 @@
 		0CA9397C1E8AF3450092CA46 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397B1E8AF3450092CA46 /* String+Localized.swift */; };
 		0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397D1E8AF5410092CA46 /* Foundation.swift */; };
 		0CA939801E8AF58F0092CA46 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */; };
-		0CA9398E1E8B0C7F0092CA46 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 0CA9398C1E8B0C7F0092CA46 /* License */; };
-		0CA9398F1E8B0C7F0092CA46 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9398D1E8B0C7F0092CA46 /* README.md */; };
 		0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA985981DA9950A00F88C5E /* ErrorProne.swift */; };
 		0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC290D31DE0ACF300B97D11 /* Execution.swift */; };
 		0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */; };
@@ -185,12 +183,12 @@
 		0C0B608C1D16C458006C12D0 = {
 			isa = PBXGroup;
 			children = (
-				0CA9398C1E8B0C7F0092CA46 /* License */,
-				0CA9398D1E8B0C7F0092CA46 /* README.md */,
 				0CA46DDD1D16C7DF00F584F6 /* Foundation */,
 				0C0B60B01D16C548006C12D0 /* FoundationTests */,
 				0CA46E531D16C80C00F584F6 /* XCConfigs */,
 				0C0B60971D16C458006C12D0 /* Products */,
+				0CA9398C1E8B0C7F0092CA46 /* License */,
+				0CA9398D1E8B0C7F0092CA46 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -801,7 +799,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Andrey Ilskiy";
 				TargetAttributes = {
 					0C0B60951D16C458006C12D0 = {
@@ -842,7 +840,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CA9398E1E8B0C7F0092CA46 /* License in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,7 +865,6 @@
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
 				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
 				0C831D041DF425250074EC3E /* Version.c in Sources */,
-				0CA9398F1E8B0C7F0092CA46 /* README.md in Sources */,
 				0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */,
 				0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */,
 				0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */,
