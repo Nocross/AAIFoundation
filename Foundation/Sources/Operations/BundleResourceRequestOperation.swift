@@ -105,7 +105,7 @@ public class BundleResourceRequestOperation<T>: Operation, Resultful {
             } catch {
                 outcome = .error(error)
             }
-        } else if let unwrapped = error as? NSError, unwrapped.code == NSUserCancelledError {
+        } else if let unwrapped = error as NSError?, unwrapped.code == NSUserCancelledError {
             execution.cancel(finalized: false)
         }
         
