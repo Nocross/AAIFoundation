@@ -100,7 +100,7 @@ extension Operation.AsynchronousExecution: Execution {
         if isFinished || !finalized {
             try handler?()
         } else if finalized {
-            finalize(withCompletion: handler)
+           try finalize(withCompletion: handler)
         }
     }
 

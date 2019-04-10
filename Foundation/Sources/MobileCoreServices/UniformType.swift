@@ -60,7 +60,7 @@ public struct UniformType: RawRepresentable, Hashable {
 //MARK: - UniformType Methods
 
 public extension UniformType {
-    public func preferredTag(in tagClass: TagClass) -> String? {
+    func preferredTag(in tagClass: TagClass) -> String? {
         var result: String? = nil
 
         if let tag = UTTypeCopyPreferredTagWithClass(uti, tagClass.tag) {
@@ -70,7 +70,7 @@ public extension UniformType {
         return result
     }
 
-    public func allTags(in tagClass: TagClass) -> [String]? {
+    func allTags(in tagClass: TagClass) -> [String]? {
         var result: [String]? = nil
 
         if let tags = UTTypeCopyAllTagsWithClass(uti, tagClass.tag) {
@@ -244,12 +244,13 @@ extension UniformType {
 
             let theDict = CFDictionaryCreateMutable(kCFAllocatorDefault, rawValue.count, keyCallbacksPtr, valueCallbacksPtr)
             precondition(theDict != nil)
+            
             let result: CFMutableDictionary = rawValue.reduce(theDict!) {
-                let keyPtr = unsafeBitCast($0.1.key, to: UnsafeRawPointer.self)
-                let valuePtr = unsafeBitCast($0.1.value, to: UnsafeRawPointer.self)
-                CFDictionaryAddValue($0.0, keyPtr, valuePtr)
+                let keyPtr = unsafeBitCast($1.key, to: UnsafeRawPointer.self)
+                let valuePtr = unsafeBitCast($1.value, to: UnsafeRawPointer.self)
+                CFDictionaryAddValue($0, keyPtr, valuePtr)
 
-                return $0.0
+                return $0
             }
 
             return CFDictionaryCreateCopy(kCFAllocatorDefault, result)

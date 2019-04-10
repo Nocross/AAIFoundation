@@ -17,42 +17,38 @@
 
 import Foundation.NSData
 
-public extension String {
-    mutating func replaceCharacter(atIndex index: String.Index, with character: Character) {
-        self.withMutableCharacters { (mutableCharacters) in
-            if index != self.endIndex, mutableCharacters[index] != character {
-                let range = index..<mutableCharacters.index(after: index)
-                mutableCharacters.replaceSubrange(range, with: [character])
-            }
-        }
+extension String {
+    public mutating func replaceCharacter(atIndex index: String.Index, with character: Character) {
+        let range = index..<self.index(after: index)
+        self.replaceSubrange(range, with: [character])
     }
 }
 
-public extension String.CharacterView  {
-    func character(fromStart offset: UInt) -> Character? {
-        var result: Character? = nil
-
-        if let idx = self.index(startIndex, offsetBy: numericCast(offset), limitedBy: endIndex) {
-            result = self[idx]
-        }
-
-        return result
-    }
-
-    func character(fromEnd offset: UInt) -> Character? {
-        var result: Character? = nil
-
-        if let idx = self.index(endIndex, offsetBy: -1 * numericCast(offset), limitedBy: startIndex) {
-            result = self[idx]
-        }
-
-        return result
-    }
-}
+//public extension String.CharacterView  {
+//    func character(fromStart offset: UInt) -> Character? {
+//        var result: Character? = nil
+//
+//        if let idx = self.index(startIndex, offsetBy: numericCast(offset), limitedBy: endIndex) {
+//            result = self[idx]
+//        }
+//
+//        return result
+//    }
+//
+//    func character(fromEnd offset: UInt) -> Character? {
+//        var result: Character? = nil
+//
+//        if let idx = self.index(endIndex, offsetBy: -1 * numericCast(offset), limitedBy: startIndex) {
+//            result = self[idx]
+//        }
+//
+//        return result
+//    }
+//}
 
 //MARK: -
 
-public extension String {
+extension String {
     public func base64EncodedString(using encoding: String.Encoding, allowLossyConversion lossy: Bool = false, base64Options options: Data.Base64EncodingOptions = []) -> String? {
         var result: String? = nil
 
@@ -64,7 +60,7 @@ public extension String {
         return result
     }
 
-    init?(base64Encoded string: String, options: Data.Base64DecodingOptions = [], using encoding: String.Encoding) {
+    public init?(base64Encoded string: String, options: Data.Base64DecodingOptions = [], using encoding: String.Encoding) {
         if let data = Data(base64Encoded: string) {
             self.init(data: data, encoding: encoding)
         } else {

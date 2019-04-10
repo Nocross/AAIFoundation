@@ -19,8 +19,8 @@ import Foundation
 
 public extension NSObjectProtocol {
     var className: String {
-        let type = type(of: self)
-        return String(describing: type)
+        let `class` = type(of: self)
+        return String(describing: `class`)
     }
 
     static var className: String {

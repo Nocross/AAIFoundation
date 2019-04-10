@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4D7021DBFF8A200F61A1B /* AsynchronousExecution.swift */; };
 		0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */; };
 		E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */; };
+		E1389748E70509A239D14EDA /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1389B7C3719541A91CB2277 /* Common.strings */; };
 		E13899EA1231BABD207B18A6 /* ErrorRecoveryAttempting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */; };
 		E1389DB1799E52831865A0CB /* UniformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138937F6CFE04C3E1DCD815 /* UniformType.swift */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,9 @@
 		0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRecoveryAttempting.swift; sourceTree = "<group>"; };
 		E138937F6CFE04C3E1DCD815 /* UniformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformType.swift; sourceTree = "<group>"; };
+		E138983FF46BAC5DD566BCDD /* FIFOCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIFOCollection.swift; sourceTree = "<group>"; };
+		E1389A3FBCADA546B5211181 /* LIFOCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFOCollection.swift; sourceTree = "<group>"; };
+		E1389B7C3719541A91CB2277 /* Common.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +320,7 @@
 				0CA46E201D16C7DF00F584F6 /* Info.plist */,
 				0CA46E211D16C7DF00F584F6 /* PrefixHeader.pch */,
 				0CC7222E1DF3601E00381040 /* Foundation-Bridging-Header.h */,
+				E1389B7C3719541A91CB2277 /* Common.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -733,6 +738,8 @@
 				0C4DB1651DC280B000521438 /* Locking.swift */,
 				0CC290D31DE0ACF300B97D11 /* Execution.swift */,
 				0C42D7351DDE38830011130B /* Resultful.swift */,
+				E138983FF46BAC5DD566BCDD /* FIFOCollection.swift */,
+				E1389A3FBCADA546B5211181 /* LIFOCollection.swift */,
 				E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */,
 			);
 			path = Protocols;
@@ -821,11 +828,12 @@
 				};
 			};
 			buildConfigurationList = 0C0B60901D16C458006C12D0 /* Build configuration list for PBXProject "Foundation" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0C0B608C1D16C458006C12D0;
 			productRefGroup = 0C0B60971D16C458006C12D0 /* Products */;
@@ -843,6 +851,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1389748E70509A239D14EDA /* Common.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,7 +945,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = FoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spx.FoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -947,7 +960,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = FoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.spx.FoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

@@ -65,7 +65,8 @@ private func os_unfair_lock_make(_ count: Int = 1) -> os_unfair_lock_t {
     #endif
 
     let lock = os_unfair_lock_t.allocate(capacity: Int(count))
-    lock.initialize(to: os_unfair_lock_s(_os_unfair_lock_opaque: 0), count: count)
+    lock.initialize(to: os_unfair_lock_s(_os_unfair_lock_opaque: 0))
+
     return lock
 }
 
@@ -75,6 +76,6 @@ private func os_unfair_lock_free(_ lock: os_unfair_lock_t, count: Int = 1) {
         os_unfair_lock_unlock(lock + i)
     }
 
-    lock.deinitialize()
-    lock.deallocate(capacity: count)
+    lock.deinitialize(count: count)
+    lock.deallocate()
 }
