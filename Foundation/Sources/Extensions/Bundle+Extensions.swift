@@ -16,11 +16,7 @@
 
 import Foundation
 
-public extension Bundle {
-
-}
-
-public extension Bundle {
+extension Bundle {
     public struct Version: RawRepresentable, Hashable {
         public typealias RawValue = String
 

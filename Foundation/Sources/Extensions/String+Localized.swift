@@ -16,13 +16,13 @@
 
 import Foundation
 
-public extension String {
+extension String {
     public struct Localized {
         private init() {}
     }
 }
 
-public extension String.Localized {
+extension String.Localized {
     public struct Common {
         private init() {}
 

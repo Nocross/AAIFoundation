@@ -71,7 +71,7 @@ public enum PropertyListValue {
             value.forEach { maped.updateValue(extract(from: $1.propertyListValue), forKey: $0) }
         }
 
-        return result
+        return result as Any
     }
 }
 

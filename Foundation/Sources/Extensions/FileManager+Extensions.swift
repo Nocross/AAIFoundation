@@ -17,7 +17,7 @@
 
 import Foundation
 
-public extension FileManager {
+extension FileManager {
     public var userDocumentsDirectoryURL: URL {
         let urls = self.urls(for: .documentDirectory, in: .userDomainMask)
         assert(!urls.isEmpty)

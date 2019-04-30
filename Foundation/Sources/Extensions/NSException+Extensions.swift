@@ -17,11 +17,11 @@
 
 import Foundation
 
-public extension NSExceptionName {
+extension NSExceptionName {
     public static let AbstractMethodException = NSExceptionName("AbstractMethodException")
 }
 
-public extension NSException {
+extension NSException {
     public static func abstractMethodException() -> NSException {
         return NSException(name: NSExceptionName.AbstractMethodException, reason: "intended for implemetation in derived class", userInfo: nil)
     }
