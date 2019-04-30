@@ -32,6 +32,7 @@
 		E1389748E70509A239D14EDA /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1389B7C3719541A91CB2277 /* Common.strings */; };
 		E13899EA1231BABD207B18A6 /* ErrorRecoveryAttempting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */; };
 		E1389DB1799E52831865A0CB /* UniformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138937F6CFE04C3E1DCD815 /* UniformType.swift */; };
+		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		E1389A3FBCADA546B5211181 /* LIFOCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFOCollection.swift; sourceTree = "<group>"; };
 		E1389B7C3719541A91CB2277 /* Common.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
+		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -718,6 +720,7 @@
 				0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */,
 				0CA9397B1E8AF3450092CA46 /* String+Localized.swift */,
 				0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */,
+				E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */,
 				0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */,
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
+				E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */,
 				0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */,
 				0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */,
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
