@@ -70,3 +70,17 @@ extension Bundle {
     }
 }
 
+extension Bundle {
+    public var localizedDisplayName: String {
+        let key = "CFBundleDisplayName"
+        guard let result = self.localizedInfoDictionary?[key] as? String else { preconditionFailure("Failed to get \(key) from \(self)") }
+        return result
+    }
+    
+    public var name: String {
+        let key = kCFBundleNameKey as String
+        guard let result = self.infoDictionary?[key] as? String else { preconditionFailure("Failed to get \(key) from \(self)") }
+        
+        return result
+    }
+}
