@@ -59,7 +59,7 @@ public struct UniformType: RawRepresentable, Hashable {
 
 //MARK: - UniformType Methods
 
-public extension UniformType {
+extension UniformType {
     func preferredTag(in tagClass: TagClass) -> String? {
         var result: String? = nil
 
@@ -128,7 +128,7 @@ public extension UniformType {
 
 //MARK: - UniformType.TagClass
 
-public extension UniformType {
+extension UniformType {
     public struct TagClass: RawRepresentable, Hashable {
         fileprivate let tag: CFString
 
@@ -169,7 +169,7 @@ public extension UniformType {
 
 //MARK: - UniformType.TagClass Methods
 
-public extension UniformType.TagClass {
+extension UniformType.TagClass {
     public func preferredIdentifier(for tag: String, conforming toType: UniformType) -> UniformType? {
         var result: UniformType? = nil
 
@@ -197,7 +197,7 @@ public extension UniformType.TagClass {
 
 //MARK - Core UniformType.TagClass(es)
 
-public extension UniformType.TagClass {
+extension UniformType.TagClass {
     public static var filenameExtension: UniformType.TagClass {
         return UniformType.TagClass(coreTagClass: kUTTagClassFilenameExtension)
     }
