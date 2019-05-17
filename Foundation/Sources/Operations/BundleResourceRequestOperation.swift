@@ -17,10 +17,10 @@
 import Foundation
 
 
-public class BundleResourceRequestOperation<T>: Operation, Resultful {
+public class BundleResourceRequestOperation<T>: Operation, Resultful, ProgressReporting {
 
     let resourceRequest: NSBundleResourceRequest
-    public private(set) var result: Outcome<T> = nil
+    public private(set) var result: Outcome<T, Error> = nil
     private let aquisitionHandler: (Bundle) throws -> T
 
     public init(with request: NSBundleResourceRequest, accessHandler handler: @escaping ((Bundle) throws -> T)) {
@@ -80,6 +80,12 @@ public class BundleResourceRequestOperation<T>: Operation, Resultful {
             progress.cancel()
         }
     }
+    
+    //MARK: - ProgressReporting
+    
+    public var progress: Progress {
+        return resourceRequest.progress
+    }
 
     //MARK: -
 
@@ -96,7 +102,7 @@ public class BundleResourceRequestOperation<T>: Operation, Resultful {
     }
 
     private func accessHandler(_ error: Error? = nil) {
-        var outcome = Outcome<T>.error(error)
+        var outcome = Outcome<T, Error>.error(error)
 
         if error == nil {
             do {
