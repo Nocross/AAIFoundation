@@ -14,9 +14,6 @@
     limitations under the License.
  */
 
-
-import Foundation
-
 public struct AbstractMethodError: Error {
     let `class`: AnyClass
     let function: StaticString
