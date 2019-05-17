@@ -14,17 +14,45 @@
     limitations under the License.
  */
 
-public enum Outcome<T>: ExpressibleByNilLiteral {
+public protocol Resultful {
+    associatedtype Resultant
+    associatedtype ErrorType: Swift.Error
+    
+    var result: Outcome<Resultant, ErrorType> { get }
+}
+
+//MARK: -
+
+public enum Outcome<Resultant, Error>: ExpressibleByNilLiteral where Error : Swift.Error {
     case error(Error?)
-    case conclusion(T)
+    case conclusion(Resultant)
+    
+    private enum Fallback: String, Swift.Error {
+        case undefined = "Undefined"
+    }
 
     public init(nilLiteral: ()) {
         self = .error(nil)
     }
+    
+    public func get() throws -> Resultant {
+        let result: Resultant
+        
+        switch self {
+        case .conclusion(let some):
+            result = some
+        case .error(let error):
+            throw error ?? Fallback.undefined
+        }
+        
+        return result
+    }
 }
 
-public protocol Resultful {
-    associatedtype Resultant
+//MARK: -
 
-    var result: Outcome<Resultant> { get }
+extension Outcome : Equatable where Resultant : Equatable, Error : Equatable {
+}
+
+extension Outcome : Hashable where Resultant : Hashable, Error : Hashable {
 }
