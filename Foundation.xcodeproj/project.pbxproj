@@ -32,7 +32,12 @@
 		E1389748E70509A239D14EDA /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1389B7C3719541A91CB2277 /* Common.strings */; };
 		E13899EA1231BABD207B18A6 /* ErrorRecoveryAttempting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */; };
 		E1389DB1799E52831865A0CB /* UniformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138937F6CFE04C3E1DCD815 /* UniformType.swift */; };
+		E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */; };
 		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
+		E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */; };
+		E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85459227AF61700276093 /* IdentifierProtocol.swift */; };
+		E3B8545E227AFAC800276093 /* StringIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B8545D227AFAC800276093 /* StringIdentifierProtocol.swift */; };
+		E3F6A9AC2284900D0097C245 /* NSPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6A9AB2284900D0097C245 /* NSPredicate+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +163,12 @@
 		E1389A3FBCADA546B5211181 /* LIFOCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFOCollection.swift; sourceTree = "<group>"; };
 		E1389B7C3719541A91CB2277 /* Common.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
+		E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMapTable+Compatibility.swift"; sourceTree = "<group>"; };
 		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
+		E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialIdentifierProtocol.swift; sourceTree = "<group>"; };
+		E3B85459227AF61700276093 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
+		E3B8545D227AFAC800276093 /* StringIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIdentifierProtocol.swift; sourceTree = "<group>"; };
+		E3F6A9AB2284900D0097C245 /* NSPredicate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -710,6 +720,7 @@
 		0CA46F141D16EE4800F584F6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */,
 				0CA46E0B1D16C7DF00F584F6 /* Error+Extensions.swift */,
 				0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */,
 				0CA46F151D17001A00F584F6 /* String+Extensions.swift */,
@@ -721,6 +732,7 @@
 				0CA9397B1E8AF3450092CA46 /* String+Localized.swift */,
 				0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */,
 				E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */,
+				E3F6A9AB2284900D0097C245 /* NSPredicate+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -744,6 +756,9 @@
 				E138983FF46BAC5DD566BCDD /* FIFOCollection.swift */,
 				E1389A3FBCADA546B5211181 /* LIFOCollection.swift */,
 				E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */,
+				E3B85459227AF61700276093 /* IdentifierProtocol.swift */,
+				E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */,
+				E3B8545D227AFAC800276093 /* StringIdentifierProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -873,14 +888,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */,
+				E3B8545E227AFAC800276093 /* StringIdentifierProtocol.swift in Sources */,
 				0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */,
+				E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */,
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
 				E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */,
 				0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */,
 				0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */,
+				E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */,
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
 				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
 				0C831D041DF425250074EC3E /* Version.c in Sources */,
+				E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */,
 				0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */,
 				0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */,
 				0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */,
@@ -890,6 +909,7 @@
 				0C64974C1EDB3FAB00C22BBB /* String+Localized.swift in Sources */,
 				0C4DB1661DC280B000521438 /* Locking.swift in Sources */,
 				0CA46F161D17001A00F584F6 /* String+Extensions.swift in Sources */,
+				E3F6A9AC2284900D0097C245 /* NSPredicate+Extensions.swift in Sources */,
 				0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */,
 				0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */,
 				0C6012F81DDB9482008F35FD /* PropertyListSerialization+Extensions.swift in Sources */,
