@@ -24,15 +24,11 @@ extension Operation {
         fileprivate var finished = false
         fileprivate var cancelled = false
 
-        weak fileprivate var operation: Operation?
+        unowned fileprivate var operation: Operation!
         
         //MARK: -
 
-        public init(){
-            lock = NSLock()
-        }
-
-        public init(with lock: Locking) {
+        public init(with lock: Locking = NSRecursiveLock()) {
             self.lock = lock
         }
     }
@@ -45,7 +41,7 @@ extension Operation.AsynchronousExecution: Execution {
         get { return lock.withCritical { cancelled } }
         set {
             let key = #keyPath(Operation.isCancelled)
-            operation?.withValueChange(for: key) { lock.withCritical { cancelled = newValue } }
+            operation.withValueChange(for: key) { lock.withCritical { cancelled = newValue } }
         }
     }
 
@@ -53,14 +49,14 @@ extension Operation.AsynchronousExecution: Execution {
         get { return lock.withCritical { executing } }
         set {
             let key = #keyPath(Operation.isExecuting)
-            operation?.withValueChange(for: key) { lock.withCritical { executing = newValue } }
+            operation.withValueChange(for: key) { lock.withCritical { executing = newValue } }
         }
     }
     public private(set) var isFinished: Bool {
         get { return lock.withCritical { finished } }
         set {
             let key = #keyPath(Operation.isFinished)
-            operation?.withValueChange(for: key) { lock.withCritical { finished = newValue } }
+            operation.withValueChange(for: key) { lock.withCritical { finished = newValue } }
         }
     }
 
@@ -80,6 +76,8 @@ extension Operation.AsynchronousExecution: Execution {
     }
 
     public func start() -> Bool {
+        precondition(operation != nil)
+        
         let isValid = lock.withCritical { !(executing && finished && cancelled) }
         assert(isValid, "Operation is already cancelled or invalid")
 
