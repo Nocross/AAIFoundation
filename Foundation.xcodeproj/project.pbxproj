@@ -32,6 +32,8 @@
 		E1389748E70509A239D14EDA /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1389B7C3719541A91CB2277 /* Common.strings */; };
 		E13899EA1231BABD207B18A6 /* ErrorRecoveryAttempting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13890606F7DC5FC6D97FDFD /* ErrorRecoveryAttempting.swift */; };
 		E1389DB1799E52831865A0CB /* UniformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138937F6CFE04C3E1DCD815 /* UniformType.swift */; };
+		E30381832291BA49002159FB /* QualityOfService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30381822291BA49002159FB /* QualityOfService+Extensions.swift */; };
+		E30381862291C0C5002159FB /* OperationQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */; };
 		E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */; };
 		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
 		E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */; };
@@ -163,6 +165,8 @@
 		E1389A3FBCADA546B5211181 /* LIFOCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFOCollection.swift; sourceTree = "<group>"; };
 		E1389B7C3719541A91CB2277 /* Common.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Common.strings; sourceTree = "<group>"; };
 		E1389C3E9242D88313B7CB79 /* ObjectiveC+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObjectiveC+Runtime.swift"; sourceTree = "<group>"; };
+		E30381822291BA49002159FB /* QualityOfService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QualityOfService+Extensions.swift"; sourceTree = "<group>"; };
+		E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extensions.swift"; sourceTree = "<group>"; };
 		E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMapTable+Compatibility.swift"; sourceTree = "<group>"; };
 		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
 		E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialIdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			children = (
 				0CA9397D1E8AF5410092CA46 /* Foundation.swift */,
 				0C831D001DF424FC0074EC3E /* Version */,
+				E303817F2291B999002159FB /* App Support */,
+				E30381842291BA9D002159FB /* Low-Level Utilities */,
 				0C488E9A1DD74F30007B3234 /* Darwin */,
 				0CA985971DA994E200F88C5E /* Protocols */,
 				0CA985941DA9942100F88C5E /* Operations */,
@@ -720,6 +726,7 @@
 		0CA46F141D16EE4800F584F6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E30381822291BA49002159FB /* QualityOfService+Extensions.swift */,
 				E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */,
 				0CA46E0B1D16C7DF00F584F6 /* Error+Extensions.swift */,
 				0CF8DFBA1D2037FC0068A152 /* FileManager+Extensions.swift */,
@@ -769,6 +776,37 @@
 				E138937F6CFE04C3E1DCD815 /* UniformType.swift */,
 			);
 			path = MobileCoreServices;
+			sourceTree = "<group>";
+		};
+		E303817F2291B999002159FB /* App Support */ = {
+			isa = PBXGroup;
+			children = (
+				E30381802291B9B6002159FB /* Task Management */,
+			);
+			path = "App Support";
+			sourceTree = "<group>";
+		};
+		E30381802291B9B6002159FB /* Task Management */ = {
+			isa = PBXGroup;
+			children = (
+				E30381812291B9D4002159FB /* Operations */,
+			);
+			path = "Task Management";
+			sourceTree = "<group>";
+		};
+		E30381812291B9D4002159FB /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		E30381842291BA9D002159FB /* Low-Level Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Low-Level Utilities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -832,7 +870,6 @@
 				TargetAttributes = {
 					0C0B60951D16C458006C12D0 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = NYN6E8D8HF;
 						DevelopmentTeamName = "Andrey Ilskiy (Personal Team)";
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
@@ -901,9 +938,11 @@
 				0C831D041DF425250074EC3E /* Version.c in Sources */,
 				E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */,
 				0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */,
+				E30381832291BA49002159FB /* QualityOfService+Extensions.swift in Sources */,
 				0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */,
 				0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */,
 				0CA46F201D1711DF00F584F6 /* objc-runtime-ext.swift in Sources */,
+				E30381862291C0C5002159FB /* OperationQueue+Extensions.swift in Sources */,
 				0CA939801E8AF58F0092CA46 /* Bundle+Extensions.swift in Sources */,
 				0C488E9E1DD74F7F007B3234 /* OSUnfairLock.swift in Sources */,
 				0C64974C1EDB3FAB00C22BBB /* String+Localized.swift in Sources */,
@@ -955,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0CA46ED21D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 			};
 			name = Debug;
 		};
@@ -962,6 +1002,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0CA46ED71D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 			};
 			name = Release;
 		};
