@@ -29,9 +29,13 @@ extension OperationQueue {
         }
     }
     
-    public var ofSelf: OperationQueue {
+    public static var ofSelf: OperationQueue {
         let value = QualityOfService.current
         return OperationQueue(qualityOfService: value)
+    }
+    
+    public static var inferred: OperationQueue {
+        return current ?? ofSelf
     }
 }
 
