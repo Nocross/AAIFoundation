@@ -17,3 +17,10 @@
 public protocol SequentialIdentifierProtocol: IdentifierProtocol, Comparable {
     
 }
+
+extension String: SequentialIdentifierProtocol {}
+
+extension Int: SequentialIdentifierProtocol {}
+
+extension UInt: SequentialIdentifierProtocol {}
+

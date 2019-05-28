@@ -14,11 +14,10 @@
     limitations under the License.
  */
 
-public protocol IdentifierProtocol: Hashable {
+public protocol Reusable {
+    associatedtype Identifier: IdentifierProtocol
+    
+    var reuseIdentifier: Identifier? { get }
+    
+    func prepareForReuse()
 }
-
-extension String: IdentifierProtocol {}
-
-extension Int: IdentifierProtocol {}
-
-extension UInt: IdentifierProtocol {}
