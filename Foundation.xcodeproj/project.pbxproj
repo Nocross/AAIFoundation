@@ -41,6 +41,7 @@
 		E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85459227AF61700276093 /* IdentifierProtocol.swift */; };
 		E3B8545E227AFAC800276093 /* StringIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B8545D227AFAC800276093 /* StringIdentifierProtocol.swift */; };
 		E3F6A9AC2284900D0097C245 /* NSPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6A9AB2284900D0097C245 /* NSPredicate+Extensions.swift */; };
+		E8AB3FF322A1D47900D8E650 /* Data+SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AB3FF222A1D47900D8E650 /* Data+SHA1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		E3B85459227AF61700276093 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		E3B8545D227AFAC800276093 /* StringIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIdentifierProtocol.swift; sourceTree = "<group>"; };
 		E3F6A9AB2284900D0097C245 /* NSPredicate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Extensions.swift"; sourceTree = "<group>"; };
+		E8AB3FF222A1D47900D8E650 /* Data+SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+SHA1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,6 +740,7 @@
 				0CA46F1D1D170C2400F584F6 /* NSException+Extensions.swift */,
 				0C6012F71DDB9482008F35FD /* PropertyListSerialization+Extensions.swift */,
 				0C0701691DE0DFD600BB4053 /* Foundation+Locking.swift */,
+				E8AB3FF222A1D47900D8E650 /* Data+SHA1.swift */,
 				0CA9397B1E8AF3450092CA46 /* String+Localized.swift */,
 				0CA9397F1E8AF58F0092CA46 /* Bundle+Extensions.swift */,
 				E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */,
@@ -940,6 +943,7 @@
 				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
 				0C831D041DF425250074EC3E /* Version.c in Sources */,
 				E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */,
+				E8AB3FF322A1D47900D8E650 /* Data+SHA1.swift in Sources */,
 				0CF8DFBB1D2037FC0068A152 /* FileManager+Extensions.swift in Sources */,
 				E30381832291BA49002159FB /* QualityOfService+Extensions.swift in Sources */,
 				0CA985991DA9950A00F88C5E /* ErrorProne.swift in Sources */,
