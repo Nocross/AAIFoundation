@@ -60,7 +60,7 @@ public struct UniformType: RawRepresentable, Hashable {
 //MARK: - UniformType Methods
 
 extension UniformType {
-    func preferredTag(in tagClass: TagClass) -> String? {
+    public func preferredTag(in tagClass: TagClass) -> String? {
         var result: String? = nil
 
         if let tag = UTTypeCopyPreferredTagWithClass(uti, tagClass.tag) {
@@ -70,7 +70,7 @@ extension UniformType {
         return result
     }
 
-    func allTags(in tagClass: TagClass) -> [String]? {
+    public func allTags(in tagClass: TagClass) -> [String]? {
         var result: [String]? = nil
 
         if let tags = UTTypeCopyAllTagsWithClass(uti, tagClass.tag) {
