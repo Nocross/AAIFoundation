@@ -55,6 +55,141 @@ public struct UniformType: RawRepresentable, Hashable {
     public static func ==(lhs: UniformType, rhs: UniformType) -> Bool {
         return UTTypeEqual(lhs.uti, rhs.uti)
     }
+    
+    //MARK: -
+    public static func make(fromTag tag: String, ofClass cls: TagClass) -> UniformType? {
+        guard cls == .mimeType || cls == .filenameExtension else { return nil }
+        
+        let utis: Set<UniformType>
+        
+        utis = [
+            .item,
+            .content,
+            .compositeContent,
+            .message,
+            .contact,
+            .archive,
+            .diskImage,
+            
+            .data,
+            .directory,
+            .resolvable,
+            .symlink,
+            .executable,
+            .mountPoint,
+            .aliasFile,
+            .urlBookmarkData,
+            
+            .url,
+            .fileURL,
+            
+            .text,
+            .plainText,
+            .utf8PlainText,
+            .utf16ExternalPlainText,
+            .utf16PlainText,
+            .delimitedText,
+            .commaSeparatedText,
+            .tabSeparatedText,
+            .utf8TabSeparatedText,
+            .rtf,
+            
+            .html,
+            .xml,
+            .sourceCode,
+            .assemblyLanguageSource,
+            .cSource,
+            .objectiveCSource,
+            .swiftSource,
+            .cPlusPlusSource,
+            .objectiveCPlusPlusSource,
+            .cHeader,
+            .cPlusPlusHeader,
+            .javaSource,
+            
+            .script,
+            .appleScript,
+            .osaScript,
+            .osaScriptBundle,
+            .javaScript,
+            .shellScript,
+            .perlScript,
+            .pythonScript,
+            .rubyScript,
+            .phpScript,
+            
+            .json,
+            .propertyList,
+            .xmlPropertyList,
+            .binaryPropertyList,
+            
+            .pdf,
+            .rtfd,
+            .flatRTFD,
+            .txnTextAndMultimediaData,
+            .webArchive,
+            
+            .image,
+            .jpeg,
+            .jpeg2000,
+            .tiff,
+            .pict,
+            .png,
+            .quickTimeImage,
+            .AppleICNS,
+            .bmp,
+            .ico,
+            .rawImage,
+            .scalableVectorGraphics,
+            .livePhoto,
+            
+            .audiovisualContent,
+            .movie,
+            .video,
+            .audio,
+            .quickTimeMovie,
+            .mpeg,
+            .mpeg2Video,
+            .mpeg2TransportStream,
+            .mp3,
+            .mpeg4,
+            .mpeg4Audio,
+            .appleProtectedMPEG4Audio,
+            .appleProtectedMPEG4Video,
+            .aviMovie,
+            .audioInterchangeFileFormat,
+            .waveformAudio,
+            .midiAudio,
+            
+            .playlist,
+            .m3upPlaylist,
+            
+            .gnuZipArchive,
+            .bzip2Archive,
+            .zipArchive,
+            
+            .spreadsheet,
+            .presentation,
+            .database,
+            
+            
+            .vcard,
+            .todoItem,
+            .calendarEvent,
+            .emailMessage,
+            
+            .internetLocation,
+            
+            .pkcs12,
+            .x509Certificate,
+            .electronicPublication,
+            .log,
+        ]
+        
+        let result = utis.first { $0.allTags(in: cls)?.contains(tag) == true }
+        
+        return result
+    }
 }
 
 //MARK: - UniformType Methods
@@ -205,6 +340,21 @@ extension UniformType.TagClass {
     public static var mimeType: UniformType.TagClass {
         return UniformType.TagClass(coreTagClass: kUTTagClassMIMEType)
     }
+
+#if os(macOS)
+    @available(OSX 10.3, *)
+    @available(iOS, unavailable, message: "N/A")
+    public static var nspBoardType: UniformType.TagClass {
+        return UniformType.TagClass(coreTagClass: kUTTagClassNSPboardType)
+    }
+
+
+    @available(iOS, unavailable, message: "N/A")
+    @available(OSX 10.3, *)
+    public static var osType: UniformType.TagClass {
+        return UniformType.TagClass(coreTagClass: kUTTagClassOSType)
+    }
+#endif /* os(macOS) */
 }
 
 //MARK: - UniformType.Declaration
