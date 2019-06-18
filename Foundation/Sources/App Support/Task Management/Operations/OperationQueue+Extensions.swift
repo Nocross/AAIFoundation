@@ -31,11 +31,11 @@ extension OperationQueue {
     
     public static var ofSelf: OperationQueue {
         let value = QualityOfService.current
-        return OperationQueue(qualityOfService: value)
+        return OperationQueue(qualityOfService: value, shouldUseUnderlyingQueue: true)
     }
     
     public static var inferred: OperationQueue {
-        return current ?? ofSelf
+        return current ?? (Thread.isMainThread ? main : ofSelf)
     }
 }
 

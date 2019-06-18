@@ -36,6 +36,9 @@
 		E30381862291C0C5002159FB /* OperationQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */; };
 		E3140146229737DD00D6F1B1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3140145229737DD00D6F1B1 /* Reusable.swift */; };
 		E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */; };
+		E3889DB122B15FE40028A327 /* UserDefaultsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3889DB022B15FE40028A327 /* UserDefaultsDomain.swift */; };
+		E3889DB322B1615B0028A327 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */; };
+		E395F5A322B67118001271AA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395F5A222B67118001271AA /* Assert.swift */; };
 		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
 		E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */; };
 		E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85459227AF61700276093 /* IdentifierProtocol.swift */; };
@@ -171,6 +174,9 @@
 		E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extensions.swift"; sourceTree = "<group>"; };
 		E3140145229737DD00D6F1B1 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMapTable+Compatibility.swift"; sourceTree = "<group>"; };
+		E3889DB022B15FE40028A327 /* UserDefaultsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDomain.swift; sourceTree = "<group>"; };
+		E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		E395F5A222B67118001271AA /* Assert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
 		E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialIdentifierProtocol.swift; sourceTree = "<group>"; };
 		E3B85459227AF61700276093 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -281,10 +287,13 @@
 		0CA46DDE1D16C7DF00F584F6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E395F5A122B670FE001271AA /* Swift */,
+				E3889DAE22B15FB50028A327 /* Files and Data persistence */,
 				0CA9397D1E8AF5410092CA46 /* Foundation.swift */,
 				0C831D001DF424FC0074EC3E /* Version */,
 				E303817F2291B999002159FB /* App Support */,
 				E30381842291BA9D002159FB /* Low-Level Utilities */,
+				E395F5A622B67329001271AA /* Error and Exceptions */,
 				0C488E9A1DD74F30007B3234 /* Darwin */,
 				0CA985971DA994E200F88C5E /* Protocols */,
 				0CA985941DA9942100F88C5E /* Operations */,
@@ -815,6 +824,40 @@
 			path = "Low-Level Utilities";
 			sourceTree = "<group>";
 		};
+		E3889DAE22B15FB50028A327 /* Files and Data persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E3889DAF22B15FC60028A327 /* Preferences */,
+				E3889DB022B15FE40028A327 /* UserDefaultsDomain.swift */,
+			);
+			path = "Files and Data persistence";
+			sourceTree = "<group>";
+		};
+		E3889DAF22B15FC60028A327 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		E395F5A122B670FE001271AA /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E395F5A222B67118001271AA /* Assert.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		E395F5A622B67329001271AA /* Error and Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				E395F5A722B67359001271AA /* Exceptions.swift */,
+				E395F5A922B67382001271AA /* Exceptions.m */,
+			);
+			path = "Error and Exceptions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -933,12 +976,15 @@
 				0C07016A1DE0DFD600BB4053 /* Foundation+Locking.swift in Sources */,
 				E3B8545E227AFAC800276093 /* StringIdentifierProtocol.swift in Sources */,
 				0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */,
+				E3889DB122B15FE40028A327 /* UserDefaultsDomain.swift in Sources */,
 				E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */,
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
+				E395F5A322B67118001271AA /* Assert.swift in Sources */,
 				E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */,
 				0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */,
 				0CC290D41DE0ACF300B97D11 /* Execution.swift in Sources */,
 				E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */,
+				E3889DB322B1615B0028A327 /* UserDefaults+Extensions.swift in Sources */,
 				0C42D7361DDE38830011130B /* Resultful.swift in Sources */,
 				0CA9397E1E8AF5410092CA46 /* Foundation.swift in Sources */,
 				0C831D041DF425250074EC3E /* Version.c in Sources */,

@@ -71,6 +71,12 @@ extension QualityOfService {
 	}
 }
 
+extension QualityOfService : Comparable {
+    public static func < (lhs: QualityOfService, rhs: QualityOfService) -> Bool {
+        return lhs.dispatchQoS.qosClass.rawValue.rawValue < rhs.dispatchQoS.qosClass.rawValue.rawValue
+    }
+}
+
 extension DispatchQoS {
     public static var ofSelf: DispatchQoS {
         let value = numericCast(QOS_MAX_RELATIVE_PRIORITY) as Int

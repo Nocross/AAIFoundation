@@ -26,7 +26,7 @@ extension Bundle {
         public let build: Int?
 
         public init?(rawValue: RawValue) {
-            let components = rawValue.components(separatedBy: ".").flatMap { return Int($0) }
+            let components = rawValue.components(separatedBy: ".").compactMap { return Int($0) }
             guard components.count >= 3 else {
                 return nil
             }

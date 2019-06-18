@@ -59,7 +59,7 @@ extension ErrorRecoveryAttempting {
 
         let cls: AnyClass! = object_getClass(delegate)
         precondition(cls != nil, "delegate doesn't have an Objective-C class")
-        precondition(class_respondsToSelector(cls, selector), "class - \(cls) doesn't respond to selector - \(selector)")
+        precondition(class_respondsToSelector(cls, selector), "class - \(String(describing: cls)) doesn't respond to selector - \(selector)")
 
         let imp = class_getMethodImplementation(cls, selector)
         precondition(imp != nil, "Missing implementation for selector - \(selector)")
