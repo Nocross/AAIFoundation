@@ -47,6 +47,33 @@ public enum Outcome<Resultant, Error>: ExpressibleByNilLiteral where Error : Swi
         
         return result
     }
+    
+    public func map<NewResultant>(_ transform: (Resultant) throws -> NewResultant) rethrows -> Outcome<NewResultant, Error> {
+        
+        let result: Outcome<NewResultant, Error>
+        
+        switch self {
+        case .conclusion(let other):
+            let some = try transform(other)
+            
+            result = .conclusion(some)
+        case .error(let some):
+            result = .error(some)
+        }
+        
+        return result
+    }
+    
+    public init(catching body: () throws -> Resultant) {
+        do {
+            let result = try body()
+            
+            self = .conclusion(result)
+        } catch {
+            guard let some = error as? Error else { preconditionFailure() }
+            self = .error(some)
+        }
+    }
 }
 
 //MARK: -
