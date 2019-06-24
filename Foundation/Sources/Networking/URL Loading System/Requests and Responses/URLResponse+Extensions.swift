@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2017 Andrey Ilskiy.
+    Copyright (c) 2019 Andrey Ilskiy.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,24 +16,14 @@
 
 import Foundation
 
-
-public final class Foundation {
-    private init() {}
-}
-
-extension Foundation {
-    public final class Version {
-        private init() {}
-
-#if DEBUG
-        public static var number: Double {
-            return getFoundationVersionNumber()
-        }
-
-        public static var string: String {
-            return String(cString: getFoundationVersionString())
-        }
-#endif /* DEBUG */
+extension URLResponse {
+    public var textEncoding: String.Encoding {
+        var result = String.Encoding.ascii
         
+        if let name = textEncodingName, let encoding = String.Encoding.init(ianaCharSet: name) {
+            result = encoding
+        }
+        
+        return result
     }
 }

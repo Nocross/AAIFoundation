@@ -17,6 +17,10 @@
 
 import ObjectiveC
 
+public func objc_getClass(_ name: String) -> AnyClass! {
+    return name.withCString { objc_getClass($0) } as? AnyClass
+}
+
 public func class_derivedClassSwizzleImp(_ cls: AnyClass, selector: Selector, imp: IMP) -> (success: Bool, previous: IMP?) {
     var success = true
     var previous: IMP? = nil
@@ -65,7 +69,7 @@ public func class_getDerivedClassImp(_ cls: AnyClass, selector: Selector) -> IMP
 }
 
 
-public func object_dynamicCast<T: AnyObject, U: AnyObject>(obj: T, `class`: U.Type) -> U? {
+public func object_dynamicCast<T, U>(obj: T, `class`: U.Type) -> U? where T: AnyObject, U : NSObject {
     var result: U? = nil
     if let objClass = object_getClass(obj) {
         if objClass === `class` {

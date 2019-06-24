@@ -78,8 +78,74 @@ public enum Outcome<Resultant, Error>: ExpressibleByNilLiteral where Error : Swi
 
 //MARK: -
 
-extension Outcome : Equatable where Resultant : Equatable, Error : Equatable {
+extension Outcome : Equatable where Resultant : Equatable, Error : Equatable {}
+
+extension Outcome : Hashable where Resultant : Hashable, Error : Hashable {}
+
+//MARK: -
+
+#if swift(>=5.0)
+
+extension Outcome {
+    public func toResult() -> Result<Resultant, Error?> {
+        switch self {
+        case .conclusion(let some):
+            return .success(some)
+            
+        case .error(let wraped):
+            return .failure(wraped)
+        }
+    }
 }
 
-extension Outcome : Hashable where Resultant : Hashable, Error : Hashable {
+//MARK: -
+
+extension Swift.Result {
+    public func toOutcome() -> Outcome<Success, Failure> {
+        switch self {
+        case .success(let some):
+            return .conclusion(some)
+            
+        case .failure(let error):
+            return .error(error)
+        }
+    }
 }
+
+extension Swift.Result : ExpressibleByNilLiteral where Failure : ExpressibleByNilLiteral {
+    public init(nilLiteral: ()) {
+        self = .failure(nil)
+    }
+}
+
+extension Swift.Optional : Error where Wrapped : Error {}
+
+#else
+
+extension Outcome {
+    public static func == (lhs: Outcome<Resultant, Error>, rhs: Outcome<Resultant, Error>) -> Bool {
+        var result = false
+        
+        switch lhs {
+        case .conclusion(let lhr):
+            switch rhs {
+            case .conclusion(let rhr):
+                result = lhr == rhr
+            case .error(_):
+                break
+            }
+            
+        case .error(let lhr):
+            switch rhs {
+            case .conclusion(_):
+                break
+            case .error(let rhr):
+                result = lhr == rhr
+            }
+        }
+        
+        return result
+    }
+}
+
+#endif /* swift(>=5.0) */

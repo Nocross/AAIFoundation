@@ -14,8 +14,7 @@
     limitations under the License.
  */
 
-
-import Foundation.NSData
+import Foundation
 
 extension String {
     public mutating func replaceCharacter(atIndex index: String.Index, with character: Character) {
@@ -24,42 +23,20 @@ extension String {
     }
 }
 
-//public extension String.CharacterView  {
-//    func character(fromStart offset: UInt) -> Character? {
-//        var result: Character? = nil
-//
-//        if let idx = self.index(startIndex, offsetBy: numericCast(offset), limitedBy: endIndex) {
-//            result = self[idx]
-//        }
-//
-//        return result
-//    }
-//
-//    func character(fromEnd offset: UInt) -> Character? {
-//        var result: Character? = nil
-//
-//        if let idx = self.index(endIndex, offsetBy: -1 * numericCast(offset), limitedBy: startIndex) {
-//            result = self[idx]
-//        }
-//
-//        return result
-//    }
-//}
-
 //MARK: -
 
 extension String {
     public func base64EncodedString(using encoding: String.Encoding, allowLossyConversion lossy: Bool = false, base64Options options: Data.Base64EncodingOptions = []) -> String? {
         var result: String? = nil
-
+        
         if !self.isEmpty && self.canBeConverted(to: encoding){
             let data = self.data(using: encoding, allowLossyConversion: lossy)
             result = data?.base64EncodedString(options: options)
         }
-
+        
         return result
     }
-
+    
     public init?(base64Encoded string: String, options: Data.Base64DecodingOptions = [], using encoding: String.Encoding) {
         if let data = Data(base64Encoded: string) {
             self.init(data: data, encoding: encoding)
@@ -69,13 +46,18 @@ extension String {
     }
 }
 
-//public extension String {
-//    public func md5StringWithEncoding(encoding: String.Encoding) -> String? {
-//        guard !self.isEmpty  && self.canBeConverted(to: encoding) else {
-//            return nil
-//        }
-//
-//        let digestLenght = CC_MD5_DIGEST_LENGTH
-//        
-//    }
-//}
+//MARK: -
+
+extension String.Encoding {
+    init?(ianaCharSet name: String) {
+        let encoding = CFStringConvertIANACharSetNameToEncoding(name as CFString)
+        
+        self.init(cf: encoding)
+    }
+    
+    init(cf encoding: CFStringEncoding) {
+        let nsencoding = CFStringConvertEncodingToNSStringEncoding(encoding)
+        
+        self.init(rawValue: nsencoding)
+    }
+}
