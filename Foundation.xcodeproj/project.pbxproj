@@ -43,6 +43,7 @@
 		E374E8D422BE61510010C88F /* URLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8D322BE61510010C88F /* URLResponse+Extensions.swift */; };
 		E3889DB122B15FE40028A327 /* UserDefaultsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3889DB022B15FE40028A327 /* UserDefaultsDomain.swift */; };
 		E3889DB322B1615B0028A327 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */; };
+		E394F81E22D2579F003BE67E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394F81D22D2579F003BE67E /* URL+Extensions.swift */; };
 		E395F5A322B67118001271AA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395F5A222B67118001271AA /* Assert.swift */; };
 		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
 		E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */; };
@@ -185,6 +186,7 @@
 		E374E8D322BE61510010C88F /* URLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extensions.swift"; sourceTree = "<group>"; };
 		E3889DB022B15FE40028A327 /* UserDefaultsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDomain.swift; sourceTree = "<group>"; };
 		E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		E394F81D22D2579F003BE67E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		E395F5A222B67118001271AA /* Assert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
 		E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialIdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 		E374E8C522BE38420010C88F /* Fundamentals */ = {
 			isa = PBXGroup;
 			children = (
+				E394F81B22D2577C003BE67E /* Numbers, Data, and Basic Values */,
 				E374E8CF22BE60F70010C88F /* Strings and Text */,
 				E374E89F22BBC11D0010C88F /* Dates and Times */,
 			);
@@ -930,6 +933,22 @@
 				E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		E394F81B22D2577C003BE67E /* Numbers, Data, and Basic Values */ = {
+			isa = PBXGroup;
+			children = (
+				E394F81C22D2578B003BE67E /* URLs */,
+			);
+			path = "Numbers, Data, and Basic Values";
+			sourceTree = "<group>";
+		};
+		E394F81C22D2578B003BE67E /* URLs */ = {
+			isa = PBXGroup;
+			children = (
+				E394F81D22D2579F003BE67E /* URL+Extensions.swift */,
+			);
+			path = URLs;
 			sourceTree = "<group>";
 		};
 		E395F5A122B670FE001271AA /* Swift */ = {
@@ -1096,6 +1115,7 @@
 				0C4DB1661DC280B000521438 /* Locking.swift in Sources */,
 				E374E8A822BBC9D00010C88F /* CommonDigest.swift in Sources */,
 				E3F6A9AC2284900D0097C245 /* NSPredicate+Extensions.swift in Sources */,
+				E394F81E22D2579F003BE67E /* URL+Extensions.swift in Sources */,
 				0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */,
 				0C0701681DE0DFB300BB4053 /* OSUnfairLock+Locking.swift in Sources */,
 				E374E8D422BE61510010C88F /* URLResponse+Extensions.swift in Sources */,
