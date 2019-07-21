@@ -1,0 +1,7 @@
+module Interoperability  {
+    explicit module ExceptionPromotion {
+        requires blocks, objc, objc_arc
+        
+        header "NSError+ExceptionPromotion.h"
+    }
+}

@@ -35,10 +35,18 @@
 		E30381832291BA49002159FB /* QualityOfService+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30381822291BA49002159FB /* QualityOfService+Extensions.swift */; };
 		E30381862291C0C5002159FB /* OperationQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */; };
 		E3140146229737DD00D6F1B1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3140145229737DD00D6F1B1 /* Reusable.swift */; };
+		E33E937A22E38CBE00E5CE26 /* NSExceptionShims.h in Headers */ = {isa = PBXBuildFile; fileRef = E33E937922E384BA00E5CE26 /* NSExceptionShims.h */; };
+		E33E937C22E46E6F00E5CE26 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E937B22E46E6E00E5CE26 /* Errors.swift */; };
+		E33E937E22E4808400E5CE26 /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E937D22E4808400E5CE26 /* NSError+Extensions.swift */; };
+		E33E938022E48A5300E5CE26 /* OptionRecoverableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E937F22E48A5300E5CE26 /* OptionRecoverableError.swift */; };
+		E33E938222E48AA700E5CE26 /* RecoverableCustomNSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E938122E48AA700E5CE26 /* RecoverableCustomNSError.swift */; };
+		E33E938622E48EBC00E5CE26 /* NSErrorShims.h in Headers */ = {isa = PBXBuildFile; fileRef = E33E936322E3712D00E5CE26 /* NSErrorShims.h */; };
 		E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */; };
 		E374E8A222BBC14B0010C88F /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8A122BBC14B0010C88F /* DateFormatter+Extensions.swift */; };
 		E374E8A522BBC3B50010C88F /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8A422BBC3B50010C88F /* Hasher.swift */; };
 		E374E8A822BBC9D00010C88F /* CommonDigest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8A722BBC9D00010C88F /* CommonDigest.swift */; };
+		E374E8AB22BD59FA0010C88F /* NSError+ExceptionPromotion.h in Headers */ = {isa = PBXBuildFile; fileRef = E374E8A922BD59FA0010C88F /* NSError+ExceptionPromotion.h */; };
+		E374E8AC22BD59FA0010C88F /* NSError+ExceptionPromotion.m in Sources */ = {isa = PBXBuildFile; fileRef = E374E8AA22BD59FA0010C88F /* NSError+ExceptionPromotion.m */; };
 		E374E8CA22BE38D50010C88F /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8C922BE38D50010C88F /* URLSession+Extensions.swift */; };
 		E374E8D122BE61040010C88F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8D022BE61040010C88F /* String+Extensions.swift */; };
 		E374E8D422BE61510010C88F /* URLResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8D322BE61510010C88F /* URLResponse+Extensions.swift */; };
@@ -46,6 +54,7 @@
 		E3889DB322B1615B0028A327 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */; };
 		E394F81E22D2579F003BE67E /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394F81D22D2579F003BE67E /* URL+Extensions.swift */; };
 		E395F5A322B67118001271AA /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395F5A222B67118001271AA /* Assert.swift */; };
+		E395F5A822B67359001271AA /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395F5A722B67359001271AA /* Exceptions.swift */; };
 		E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */; };
 		E3B85458227AF5BF00276093 /* SequentialIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */; };
 		E3B8545A227AF61700276093 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B85459227AF61700276093 /* IdentifierProtocol.swift */; };
@@ -179,10 +188,21 @@
 		E30381822291BA49002159FB /* QualityOfService+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QualityOfService+Extensions.swift"; sourceTree = "<group>"; };
 		E30381852291C0C5002159FB /* OperationQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Extensions.swift"; sourceTree = "<group>"; };
 		E3140145229737DD00D6F1B1 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		E33E936322E3712D00E5CE26 /* NSErrorShims.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSErrorShims.h; sourceTree = "<group>"; };
+		E33E937722E37BC800E5CE26 /* private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = private.modulemap; sourceTree = "<group>"; };
+		E33E937922E384BA00E5CE26 /* NSExceptionShims.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSExceptionShims.h; sourceTree = "<group>"; };
+		E33E937B22E46E6E00E5CE26 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		E33E937D22E4808400E5CE26 /* NSError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
+		E33E937F22E48A5300E5CE26 /* OptionRecoverableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRecoverableError.swift; sourceTree = "<group>"; };
+		E33E938122E48AA700E5CE26 /* RecoverableCustomNSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableCustomNSError.swift; sourceTree = "<group>"; };
+		E33E938722E48F1300E5CE26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E33E938A22E4999400E5CE26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMapTable+Compatibility.swift"; sourceTree = "<group>"; };
 		E374E8A122BBC14B0010C88F /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		E374E8A422BBC3B50010C88F /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
 		E374E8A722BBC9D00010C88F /* CommonDigest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDigest.swift; sourceTree = "<group>"; };
+		E374E8A922BD59FA0010C88F /* NSError+ExceptionPromotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+ExceptionPromotion.h"; sourceTree = "<group>"; };
+		E374E8AA22BD59FA0010C88F /* NSError+ExceptionPromotion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ExceptionPromotion.m"; sourceTree = "<group>"; };
 		E374E8C922BE38D50010C88F /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		E374E8D022BE61040010C88F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E374E8D322BE61510010C88F /* URLResponse+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extensions.swift"; sourceTree = "<group>"; };
@@ -190,6 +210,7 @@
 		E3889DB222B1615B0028A327 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		E394F81D22D2579F003BE67E /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		E395F5A222B67118001271AA /* Assert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
+		E395F5A722B67359001271AA /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		E3AC783E2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundleResourceRequest+Extensions.swift"; sourceTree = "<group>"; };
 		E3B85457227AF5BF00276093 /* SequentialIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialIdentifierProtocol.swift; sourceTree = "<group>"; };
 		E3B85459227AF61700276093 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -315,6 +336,7 @@
 				0CA46E0C1D16C7DF00F584F6 /* Runtime */,
 				E374E8A622BBC9880010C88F /* CommonCrypto */,
 				E1389C0DA2D840D29E3E8A6C /* MobileCoreServices */,
+				E33E938822E4990800E5CE26 /* Shims */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -362,6 +384,7 @@
 		0CA46E1E1D16C7DF00F584F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E33E937722E37BC800E5CE26 /* private.modulemap */,
 				0CA46E201D16C7DF00F584F6 /* Info.plist */,
 				0CA46E211D16C7DF00F584F6 /* PrefixHeader.pch */,
 				0CC7222E1DF3601E00381040 /* Foundation-Bridging-Header.h */,
@@ -845,6 +868,26 @@
 			path = "Low-Level Utilities";
 			sourceTree = "<group>";
 		};
+		E33E937822E37C8800E5CE26 /* Exception Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				E33E938A22E4999400E5CE26 /* module.modulemap */,
+				E374E8A922BD59FA0010C88F /* NSError+ExceptionPromotion.h */,
+				E374E8AA22BD59FA0010C88F /* NSError+ExceptionPromotion.m */,
+			);
+			path = "Exception Promotion";
+			sourceTree = "<group>";
+		};
+		E33E938822E4990800E5CE26 /* Shims */ = {
+			isa = PBXGroup;
+			children = (
+				E33E938722E48F1300E5CE26 /* module.modulemap */,
+				E33E936322E3712D00E5CE26 /* NSErrorShims.h */,
+				E33E937922E384BA00E5CE26 /* NSExceptionShims.h */,
+			);
+			path = Shims;
+			sourceTree = "<group>";
+		};
 		E374E89F22BBC11D0010C88F /* Dates and Times */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +1017,12 @@
 		E395F5A622B67329001271AA /* Error and Exceptions */ = {
 			isa = PBXGroup;
 			children = (
+				E33E937B22E46E6E00E5CE26 /* Errors.swift */,
+				E395F5A722B67359001271AA /* Exceptions.swift */,
+				E33E937D22E4808400E5CE26 /* NSError+Extensions.swift */,
+				E33E937F22E48A5300E5CE26 /* OptionRecoverableError.swift */,
+				E33E938122E48AA700E5CE26 /* RecoverableCustomNSError.swift */,
+				E33E937822E37C8800E5CE26 /* Exception Promotion */,
 			);
 			path = "Error and Exceptions";
 			sourceTree = "<group>";
@@ -985,6 +1034,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E374E8AB22BD59FA0010C88F /* NSError+ExceptionPromotion.h in Headers */,
+				E33E937A22E38CBE00E5CE26 /* NSExceptionShims.h in Headers */,
+				E33E938622E48EBC00E5CE26 /* NSErrorShims.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,12 +1170,15 @@
 				0CC4D7031DBFF8A200F61A1B /* AsynchronousExecution.swift in Sources */,
 				0CA46F201D1711DF00F584F6 /* objc-runtime-ext.swift in Sources */,
 				E30381862291C0C5002159FB /* OperationQueue+Extensions.swift in Sources */,
+				E33E937E22E4808400E5CE26 /* NSError+Extensions.swift in Sources */,
+				E395F5A822B67359001271AA /* Exceptions.swift in Sources */,
 				0CA939801E8AF58F0092CA46 /* Bundle+Extensions.swift in Sources */,
 				0C488E9E1DD74F7F007B3234 /* OSUnfairLock.swift in Sources */,
 				0C64974C1EDB3FAB00C22BBB /* String+Localized.swift in Sources */,
 				E374E8CA22BE38D50010C88F /* URLSession+Extensions.swift in Sources */,
 				0C4DB1661DC280B000521438 /* Locking.swift in Sources */,
 				E374E8A822BBC9D00010C88F /* CommonDigest.swift in Sources */,
+				E33E938022E48A5300E5CE26 /* OptionRecoverableError.swift in Sources */,
 				E3F6A9AC2284900D0097C245 /* NSPredicate+Extensions.swift in Sources */,
 				E394F81E22D2579F003BE67E /* URL+Extensions.swift in Sources */,
 				0CA46F181D1702FA00F584F6 /* NSObject+Extensions.swift in Sources */,
@@ -1131,9 +1186,12 @@
 				E374E8D422BE61510010C88F /* URLResponse+Extensions.swift in Sources */,
 				E374E8A522BBC3B50010C88F /* Hasher.swift in Sources */,
 				0C6012F81DDB9482008F35FD /* PropertyListSerialization+Extensions.swift in Sources */,
+				E33E938222E48AA700E5CE26 /* RecoverableCustomNSError.swift in Sources */,
+				E374E8AC22BD59FA0010C88F /* NSError+ExceptionPromotion.m in Sources */,
 				E3140146229737DD00D6F1B1 /* Reusable.swift in Sources */,
 				E13893475D122A4C29B80DD3 /* ObjectiveC+Runtime.swift in Sources */,
 				E1389DB1799E52831865A0CB /* UniformType.swift in Sources */,
+				E33E937C22E46E6F00E5CE26 /* Errors.swift in Sources */,
 				E13899EA1231BABD207B18A6 /* ErrorRecoveryAttempting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,6 +1233,8 @@
 			baseConfigurationReference = 0CA46ED21D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Bridged-Debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				MODULEMAP_PRIVATE_FILE = "$(PROJECT_DIR)/$(TARGET_NAME)/Supporting Files/private.modulemap";
+				SWIFT_INCLUDE_PATHS = "$(inhertied) \"$(PROJECT_DIR)/$(TARGET_NAME)/Sources/App Support/Error and Exceptions/Exception Promotion\" $(PROJECT_DIR)/$(TARGET_NAME)/Sources/Shims";
 			};
 			name = Debug;
 		};
@@ -1183,6 +1243,8 @@
 			baseConfigurationReference = 0CA46ED71D16C86800F584F6 /* iOS-Framework-Swift-Embedded-Release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
+				MODULEMAP_PRIVATE_FILE = "$(PROJECT_DIR)/$(TARGET_NAME)/Supporting Files/private.modulemap";
+				SWIFT_INCLUDE_PATHS = "$(inhertied) \"$(PROJECT_DIR)/$(TARGET_NAME)/Sources/App Support/Error and Exceptions/Exception Promotion\" $(PROJECT_DIR)/$(TARGET_NAME)/Sources/Shims";
 			};
 			name = Release;
 		};

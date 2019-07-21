@@ -1,0 +1,6 @@
+module InteroperabilityShims {
+    requires blocks, objc, objc_arc
+    
+    header "NSErrorShims.h"
+    header "NSExceptionShims.h"
+}
