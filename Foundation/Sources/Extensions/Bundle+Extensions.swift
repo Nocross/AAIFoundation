@@ -27,13 +27,13 @@ extension Bundle {
 
         public init?(rawValue: RawValue) {
             let components = rawValue.components(separatedBy: ".").compactMap { return Int($0) }
-            guard components.count >= 3 else {
+            guard components.count >= 2 else {
                 return nil
             }
 
             major = components[0]
             minor = components[1]
-            patch = components[2]
+            patch = components.count >= 3 ? components[2] : 0
 
             build = components.count == 4 ? components[3] : nil
         }
@@ -63,9 +63,11 @@ extension Bundle {
     }
 
     public var version: Version {
-        let key = kCFBundleVersionKey as String
+        var key = kCFBundleVersionKey as String
         guard let versionString = self.infoDictionary?[key] as? String else { preconditionFailure("Failed to aquire version string from Info dictionary for key - \(key)") }
-        guard let result = Version(rawValue: versionString) else { preconditionFailure("Failed to create \(Bundle.Version.self) from \(versionString)") }
+        key = "CFBundleShortVersionString"
+        guard let shortVersionString = self.infoDictionary?[key] as? String else { preconditionFailure("Failed to aquire version string from Info dictionary for key - \(key)") }
+        guard let result = Version(rawValue: "\(shortVersionString).\(versionString)") else { preconditionFailure("Failed to create \(Bundle.Version.self) from \(versionString)") }
         return result
     }
 }
