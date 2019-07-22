@@ -58,9 +58,7 @@ extension String.Localized.Error.Unknown {
         var result = NSLocalizedString("error.recovery.unknown.desctiption", value: value, comment: "'Unknown' error description")
         
         if result == value {
-            let bundle = Bundle(for: Foundation.self)
-            
-            result = NSLocalizedString("error.recovery.unknown.desctiption", bundle: bundle, value: value, comment: "'Unknown' error description")
+            result = NSLocalizedString("error.recovery.unknown.desctiption", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
@@ -73,7 +71,7 @@ extension String.Localized.Error.Unknown {
         if result == value {
             let bundle = Bundle(for: Foundation.self)
             
-            result = NSLocalizedString("error.recovery.unknown.failure-reason", bundle: bundle, value: value, comment: "'Unknown' error failure reason")
+            result = NSLocalizedString("error.recovery.unknown.failure-reason", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error failure reason")
         }
         
         return result
@@ -84,9 +82,7 @@ extension String.Localized.Error.Unknown {
         var result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", value: value, comment: "'Unknown' error description")
         
         if result == value {
-            let bundle = Bundle(for: Foundation.self)
-            
-            result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", bundle: bundle, value: value, comment: "'Unknown' error description")
+            result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
@@ -97,9 +93,7 @@ extension String.Localized.Error.Unknown {
         var result = NSLocalizedString("error.recovery.unknown.help-anchor", value: value, comment: "'Unknown' error description")
         
         if result == value {
-            let bundle = Bundle(for: Foundation.self)
-            
-            result = NSLocalizedString("error.recovery.unknown.help-anchor", bundle: bundle, value: value, comment: "'Unknown' error description")
+            result = NSLocalizedString("error.recovery.unknown.help-anchor", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
@@ -113,5 +107,13 @@ extension String.Localized.Error.Recovery.Option {
     
     public static var report: String {
         return NSLocalizedString("error.recovery.option.report", value: "Report", comment: "'Report' error recovery option")
+    }
+}
+
+//MARK: -
+
+fileprivate extension Bundle {
+    static var embeddedFramework: Bundle {
+        return Bundle(for: Foundation.self)
     }
 }

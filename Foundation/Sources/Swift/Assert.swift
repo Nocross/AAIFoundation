@@ -14,6 +14,23 @@
     limitations under the License.
  */
 
+//MARK: -
+
+public func precondition<U>(subject: Any, to: U.Type, message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) {
+    let asOfType = (subject as? U.Type) != nil
+    let isOfType = subject is U.Type
+    
+    precondition(isOfType && asOfType, "Should conform to type - \(String(describing: U.self))")
+}
+
+public func preconditionFailure<U>(subject: Any, to: U.Type, message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+    
+    preconditionFailure("Subject - \(String(describing: subject)) - Should conform to type - \(String(describing: U.self))")
+}
+
+
+//MARK: -
+
 public func fatalNotImplementedError(message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
     
     let message = message()

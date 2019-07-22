@@ -69,6 +69,6 @@ fileprivate struct UnknownError: Error, RecoverableError, LocalizedError, Custom
     }
 }
 
-public func makeUnknownError(retry handler: (() -> Bool)? = nil ) -> Error {
+public func makeUnknownError(retry handler: (() -> Bool)? = nil ) -> RecoverableError & LocalizedError {
     return UnknownError(retry: handler)
 }
