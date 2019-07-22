@@ -16,12 +16,15 @@
 
 public func fatalNotImplementedError(message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
     
-    let message = """
-    Not Implemented
-    \(message())
-    """
+    let message = message()
     
-    fatalError(message)
+    var text = "Not Implemented"
+    
+    if !message.isEmpty {
+        text.append("\n\(message)")
+    }
+    
+    fatalError(text, file: file, line: line)
 }
 
 
@@ -35,5 +38,5 @@ public func fatalUnknownValueError(_ value: Any, message: @autoclosure () -> Str
     \(message())
     """
     
-    fatalError(message)
+    fatalError(message, file: file, line: line)
 }

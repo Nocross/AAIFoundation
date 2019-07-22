@@ -17,10 +17,10 @@
 import Foundation
 
 public protocol ReportableError: RecoverableError {
-    associatedtype ReportRecoveryOption
+    associatedtype ReportOptionType
     
     
-    var reportRecoveryOption: ReportRecoveryOption { get }
+    var reportRecoveryOption: ReportOptionType { get }
     
     var reportRecoveryOptionIndex: Int { get }
 }

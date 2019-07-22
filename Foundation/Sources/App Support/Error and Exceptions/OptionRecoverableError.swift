@@ -17,25 +17,25 @@
 import Foundation
 
 public protocol OptionRecoverableError: RecoverableError {
-    var options: [RecoveryOptionProtocol]? { get }
+    var options: [RecoveryOptionProtocol] { get }
 }
 
 extension OptionRecoverableError {
     public func attemptRecovery(optionIndex recoveryOptionIndex: Int, resultHandler handler: (Bool) -> Void) {
         
-        let success = options?[recoveryOptionIndex].attemptRecovery() ?? false
+        let success = recoveryOptionIndex < options.count ? options[recoveryOptionIndex].attemptRecovery() : false
         
         handler(success)
     }
     
     public func attemptRecovery(optionIndex recoveryOptionIndex: Int) -> Bool {
-        let success = options?[recoveryOptionIndex].attemptRecovery() ?? false
+        let success = recoveryOptionIndex < options.count ? options[recoveryOptionIndex].attemptRecovery() : false
         
         return success
     }
     
     public var recoveryOptions: [String] {
-        return options?.map { $0.localizedOption } ?? []
+        return options.isEmpty ? options.map { $0.localizedOption } : []
     }
 }
 
