@@ -42,6 +42,10 @@ extension URL {
     public var schemeValue: Scheme? {
         return scheme == nil ? nil : URL.Scheme(rawValue: scheme!)
     }
+
+    public var email: String? {
+        return schemeValue == .mailto ? URLComponents(url: self, resolvingAgainstBaseURL: false)?.path : nil
+    }
 }
 
 //MARK: -
