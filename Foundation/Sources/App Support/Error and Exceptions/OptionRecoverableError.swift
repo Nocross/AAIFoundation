@@ -46,4 +46,3 @@ public protocol RecoveryOptionProtocol {
     
     func attemptRecovery() -> Bool
 }
-

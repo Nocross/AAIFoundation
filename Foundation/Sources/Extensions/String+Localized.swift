@@ -52,4 +52,8 @@ extension String.Localized.Error.Recovery.Option {
     public static var retry: String {
         return NSLocalizedString("error.recovery.option.retry", value: "Retry", comment: "'Retry' error recovery option")
     }
+    
+    public static var report: String {
+        return NSLocalizedString("error.recovery.option.report", value: "Report", comment: "'Report' error recovery option")
+    }
 }
