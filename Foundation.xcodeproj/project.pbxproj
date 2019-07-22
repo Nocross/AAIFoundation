@@ -42,6 +42,8 @@
 		E33E938222E48AA700E5CE26 /* RecoverableCustomNSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E938122E48AA700E5CE26 /* RecoverableCustomNSError.swift */; };
 		E33E938622E48EBC00E5CE26 /* NSErrorShims.h in Headers */ = {isa = PBXBuildFile; fileRef = E33E936322E3712D00E5CE26 /* NSErrorShims.h */; };
 		E33E938C22E5BC7900E5CE26 /* ReportableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E938B22E5BC7900E5CE26 /* ReportableError.swift */; };
+		E33E939922E5F04900E5CE26 /* CustomNSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E939822E5F04900E5CE26 /* CustomNSError.swift */; };
+		E33E939B22E5F06B00E5CE26 /* ComplexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E939A22E5F06B00E5CE26 /* ComplexError.swift */; };
 		E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */; };
 		E374E8A222BBC14B0010C88F /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8A122BBC14B0010C88F /* DateFormatter+Extensions.swift */; };
 		E374E8A522BBC3B50010C88F /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E374E8A422BBC3B50010C88F /* Hasher.swift */; };
@@ -199,6 +201,8 @@
 		E33E938722E48F1300E5CE26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		E33E938A22E4999400E5CE26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		E33E938B22E5BC7900E5CE26 /* ReportableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportableError.swift; sourceTree = "<group>"; };
+		E33E939822E5F04900E5CE26 /* CustomNSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNSError.swift; sourceTree = "<group>"; };
+		E33E939A22E5F06B00E5CE26 /* ComplexError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexError.swift; sourceTree = "<group>"; };
 		E36C7DDE22873CEF0072705E /* NSMapTable+Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMapTable+Compatibility.swift"; sourceTree = "<group>"; };
 		E374E8A122BBC14B0010C88F /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		E374E8A422BBC3B50010C88F /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
@@ -1021,6 +1025,8 @@
 			children = (
 				E33E937B22E46E6E00E5CE26 /* Errors.swift */,
 				E395F5A722B67359001271AA /* Exceptions.swift */,
+				E33E939822E5F04900E5CE26 /* CustomNSError.swift */,
+				E33E939A22E5F06B00E5CE26 /* ComplexError.swift */,
 				E33E937D22E4808400E5CE26 /* NSError+Extensions.swift */,
 				E33E938B22E5BC7900E5CE26 /* ReportableError.swift */,
 				E33E937F22E48A5300E5CE26 /* OptionRecoverableError.swift */,
@@ -1153,9 +1159,11 @@
 				0CA46F1E1D170C2400F584F6 /* NSException+Extensions.swift in Sources */,
 				E3889DB122B15FE40028A327 /* UserDefaultsDomain.swift in Sources */,
 				E36C7DDF22873CEF0072705E /* NSMapTable+Compatibility.swift in Sources */,
+				E33E939B22E5F06B00E5CE26 /* ComplexError.swift in Sources */,
 				0CA46E411D16C7DF00F584F6 /* Error+Extensions.swift in Sources */,
 				E395F5A322B67118001271AA /* Assert.swift in Sources */,
 				E3AC783F2264E47F002CE009 /* NSBundleResourceRequest+Extensions.swift in Sources */,
+				E33E939922E5F04900E5CE26 /* CustomNSError.swift in Sources */,
 				E33E938C22E5BC7900E5CE26 /* ReportableError.swift in Sources */,
 				0C1484841E8A544E00A7FED7 /* BundleResourceRequestOperation.swift in Sources */,
 				A96CD35422E37F5700F168EF /* HTTP.swift in Sources */,

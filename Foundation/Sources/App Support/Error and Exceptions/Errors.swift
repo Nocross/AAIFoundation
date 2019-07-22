@@ -16,88 +16,59 @@
 
 import Foundation
 
-public protocol ComplexError : Error {
-    var underlyingError: Error? { get }
+fileprivate struct UnknownError: Error, RecoverableError, LocalizedError, CustomNSError {
+    private let handler: (() -> Bool)?
+    
+    init(retry handler: (() -> Bool)? = nil) {
+        self.handler = handler
+        
+        if handler == nil {
+            recoveryOptions = []
+        } else {
+            let retry = String.Localized.Error.Recovery.Option.retry
+            recoveryOptions = [retry]
+        }
+    }
+    
+    //MARK: - RecoverableError
+    
+    let recoveryOptions: [String]
+    
+    func attemptRecovery(optionIndex recoveryOptionIndex: Int) -> Bool {
+        let isRelevant = !recoveryOptions.isEmpty && recoveryOptionIndex == recoveryOptions.startIndex
+        
+        return isRelevant ? (handler?() ?? false) : false
+    }
+    
+    func attemptRecovery(optionIndex recoveryOptionIndex: Int, resultHandler handler: @escaping (Bool) -> Void) {
+        let qos = DispatchQoS.ofSelf
+        let queue = DispatchQueue.global(qos: qos)
+        
+        queue.async {
+            let hasRecovered = self.attemptRecovery(optionIndex: recoveryOptionIndex)
+            handler(hasRecovered)
+        }
+    }
+    
+    //MARK: - LocalizedError
+    
+    var errorDescription: String? {
+        return String.Localized.Error.Unknown.description
+    }
+    
+    var failureReason: String? {
+        return String.Localized.Error.Unknown.failureReason
+    }
+    
+    var recoverySuggestion: String? {
+        return String.Localized.Error.Unknown.recoverySuggestion
+    }
+    
+    var helpAnchor: String? {
+        return String.Localized.Error.Unknown.helpAnchor
+    }
 }
 
-//MARK: -
-
-extension CustomNSError {
-    public var debugDescription: String {
-        return self.localizedDescription
-    }
-    
-    public var errorUserInfo: [String : Any] {
-        let result = type(of: self).makeUserInfo(error: self)
-        
-        return result
-    }
-    
-    private static func makeUserInfo(error: Swift.Error) -> [String : Any] {
-        var userInfo: [String : Any] = [:]
-        
-        if let localizedError = error as? LocalizedError {
-            if let description = localizedError.errorDescription {
-                userInfo[NSLocalizedDescriptionKey] = description
-            }
-            
-            if let reason = localizedError.failureReason {
-                userInfo[NSLocalizedFailureReasonErrorKey] = reason
-            }
-            
-            if let suggestion = localizedError.recoverySuggestion {
-                userInfo[NSLocalizedRecoverySuggestionErrorKey] = suggestion
-            }
-            
-            if let helpAnchor = localizedError.helpAnchor {
-                userInfo[NSHelpAnchorErrorKey] = helpAnchor
-            }
-        }
-        
-        if let recoverableError = error as? RecoverableError {
-            userInfo[NSLocalizedRecoveryOptionsErrorKey] = recoverableError.recoveryOptions
-            userInfo[NSRecoveryAttempterErrorKey] = NSError.RecoveryAttempter()
-        }
-        
-        if let complexError = error as? ComplexError, let underlyingError = complexError.underlyingError {
-            userInfo[NSUnderlyingErrorKey] = underlyingError
-        }
-        
-        return userInfo
-    }
-    
-    private func provideUserInfoValue<T>(for key: String) -> T? {
-        return type(of: self).provideUserInfoValue(for: self, key: key)
-    }
-    
-    public static func provideUserInfoValue<T>(for error: Swift.Error, key: String) -> T? {
-        
-        let domain: String
-        if let nserror = error as? CustomNSError {
-            domain = type(of: nserror).errorDomain
-        } else {
-            domain = (error as NSError).domain
-        }
-        
-        guard domain == self.errorDomain else {
-            return nil
-        }
-        
-        var result: Any?
-        
-        switch key {
-        case NSDebugDescriptionErrorKey:
-            result = (error as? CustomNSError)?.debugDescription ?? error.localizedDescription
-            
-        default:
-            result = NSError.provideUserInfoValue(for: error, key: key)
-            break
-        }
-        
-        return result as? T
-    }
-    
-    fileprivate static func provideAnyUserInfoValue(for error: Swift.Error, key: String) -> Any? {
-        return provideUserInfoValue(for:error, key:key)
-    }
+public func makeUnknownError(retry handler: (() -> Bool)? = nil ) -> Error {
+    return UnknownError(retry: handler)
 }

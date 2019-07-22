@@ -45,6 +45,64 @@ extension String.Localized {
                 private init() {}
             }
         }
+        
+        public struct Unknown {
+            private init() {}
+        }
+    }
+}
+
+extension String.Localized.Error.Unknown {
+    public static var description: String {
+        let value = "Unknown error"
+        var result = NSLocalizedString("error.recovery.unknown.desctiption", value: value, comment: "'Unknown' error description")
+        
+        if result == value {
+            let bundle = Bundle(for: Foundation.self)
+            
+            result = NSLocalizedString("error.recovery.unknown.desctiption", bundle: bundle, value: value, comment: "'Unknown' error description")
+        }
+        
+        return result
+    }
+    
+    public static var failureReason: String {
+        let value = "Failure reason - Unknown"
+        var result = NSLocalizedString("error.recovery.unknown.failure-reason", value: value, comment: "'Unknown' error failure reason")
+        
+        if result == value {
+            let bundle = Bundle(for: Foundation.self)
+            
+            result = NSLocalizedString("error.recovery.unknown.failure-reason", bundle: bundle, value: value, comment: "'Unknown' error failure reason")
+        }
+        
+        return result
+    }
+    
+    public static var recoverySuggestion: String {
+        let value = "Try again or come back later"
+        var result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", value: value, comment: "'Unknown' error description")
+        
+        if result == value {
+            let bundle = Bundle(for: Foundation.self)
+            
+            result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", bundle: bundle, value: value, comment: "'Unknown' error description")
+        }
+        
+        return result
+    }
+    
+    public static var helpAnchor: String {
+        let value = "No 'Help' documentation available"
+        var result = NSLocalizedString("error.recovery.unknown.help-anchor", value: value, comment: "'Unknown' error description")
+        
+        if result == value {
+            let bundle = Bundle(for: Foundation.self)
+            
+            result = NSLocalizedString("error.recovery.unknown.help-anchor", bundle: bundle, value: value, comment: "'Unknown' error description")
+        }
+        
+        return result
     }
 }
 
