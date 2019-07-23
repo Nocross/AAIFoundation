@@ -28,6 +28,9 @@ public func preconditionFailure<U>(subject: Any, to: U.Type, message: @autoclosu
     preconditionFailure("Subject - \(String(describing: subject)) - Should conform to type - \(String(describing: U.self))")
 }
 
+public func preconditionShouldExistFailure(message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+    preconditionFailure("Should exist\n\(message())")
+}
 
 //MARK: -
 
@@ -44,7 +47,6 @@ public func fatalNotImplementedError(message: @autoclosure () -> String = String
     fatalError(text, file: file, line: line)
 }
 
-
 public func fatalUnknownValueError(_ value: Any, message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
     
     let type = String(describing: Swift.type(of: value))
@@ -57,3 +59,8 @@ public func fatalUnknownValueError(_ value: Any, message: @autoclosure () -> Str
     
     fatalError(message, file: file, line: line)
 }
+
+public func fatalNotSupportedError(message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+    preconditionFailure("Not Supported\n\(message())")
+}
+
