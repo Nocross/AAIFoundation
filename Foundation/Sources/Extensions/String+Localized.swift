@@ -54,23 +54,23 @@ extension String.Localized {
 
 extension String.Localized.Error.Unknown {
     public static var description: String {
-        let value = "Unknown error"
-        var result = NSLocalizedString("error.recovery.unknown.desctiption", value: value, comment: "'Unknown' error description")
+        let key = "error.recovery.unknown.desctiption"
+        var result = NSLocalizedString(key, comment: "'Unknown' error description")
         
-        if result == value {
-            result = NSLocalizedString("error.recovery.unknown.desctiption", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
+        if result == key {
+            let value = "Unknown error"
+            result = NSLocalizedString(key, bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
     }
     
     public static var failureReason: String {
-        let value = "Failure reason - Unknown"
-        var result = NSLocalizedString("error.recovery.unknown.failure-reason", value: value, comment: "'Unknown' error failure reason")
+        let key = "error.recovery.unknown.failure-reason"
+        var result = NSLocalizedString(key, comment: "'Unknown' error failure reason")
         
-        if result == value {
-            let bundle = Bundle(for: Foundation.self)
-            
+        if result == key {
+            let value = "Failure reason - Unknown"
             result = NSLocalizedString("error.recovery.unknown.failure-reason", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error failure reason")
         }
         
@@ -78,22 +78,24 @@ extension String.Localized.Error.Unknown {
     }
     
     public static var recoverySuggestion: String {
-        let value = "Try again or come back later"
-        var result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", value: value, comment: "'Unknown' error description")
+        let key = "error.recovery.unknown.recovery-suggestion"
+        var result = NSLocalizedString(key, comment: "'Unknown' error description")
         
-        if result == value {
-            result = NSLocalizedString("error.recovery.unknown.recovery-suggestion", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
+        if result == key {
+            let value = "Try again or come back later"
+            result = NSLocalizedString(key, bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
     }
     
     public static var helpAnchor: String {
-        let value = "No 'Help' documentation available"
-        var result = NSLocalizedString("error.recovery.unknown.help-anchor", value: value, comment: "'Unknown' error description")
+        let key = "error.recovery.unknown.help-anchor"
+        var result = NSLocalizedString(key, comment: "'Unknown' error description")
         
-        if result == value {
-            result = NSLocalizedString("error.recovery.unknown.help-anchor", bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
+        if result == key {
+            let value = "No 'Help' documentation available"
+            result = NSLocalizedString(key, bundle: Bundle.embeddedFramework, value: value, comment: "'Unknown' error description")
         }
         
         return result
@@ -102,11 +104,25 @@ extension String.Localized.Error.Unknown {
 
 extension String.Localized.Error.Recovery.Option {
     public static var retry: String {
-        return NSLocalizedString("error.recovery.option.retry", value: "Retry", comment: "'Retry' error recovery option")
+        let key = "error.recovery.option.retry"
+        var result = NSLocalizedString(key, comment: "'Retry' error recovery option")
+        
+        if result == key {
+            result = NSLocalizedString(key, value: "Retry", comment: "'Retry' error recovery option")
+        }
+        
+        return result
     }
     
     public static var report: String {
-        return NSLocalizedString("error.recovery.option.report", value: "Report", comment: "'Report' error recovery option")
+        let key = "error.recovery.option.report"
+        var result = NSLocalizedString(key, comment: "'Report' error recovery option")
+        
+        if result == key {
+            result = NSLocalizedString(key, value: "Report", comment: "'Report' error recovery option")
+        }
+        
+        return result
     }
 }
 
